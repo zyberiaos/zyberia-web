@@ -23,7 +23,6 @@ body {
   background-color: var(--color-white);
   color: var(--color-black);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 .container {
@@ -2095,9 +2094,8 @@ video.v-scrub {
 }
 
 /* --- UI BUGS FIXES --- */
-/* 1. Prevent Horizontal Scroll */
+/* 1. Prevent Horizontal Scroll (removed from body, handled gracefully by widths) */
 html, body {
-    overflow-x: hidden !important;
     width: 100%;
 }
 
@@ -2159,7 +2157,7 @@ html, body {
 }
 
 #scrolltelling .v-scrub {
-    width: 100vw;
+    width: 100%;
     height: 100dvh;
     object-fit: cover; /* This forces the video to fill the screen without black bars */
     position: absolute;
