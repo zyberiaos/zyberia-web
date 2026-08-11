@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══ SEO TÉCNICO ═══ -->
+    <title>Zyberia | Comunicación, Tecnología e Inteligencia Artificial — Tucumán</title>
+    <meta name="description" content="Estudio de comunicación, tecnología e inteligencia artificial en Tucumán. Diseñamos marcas, sistemas y soluciones digitales para que tu empresa comunique, opere y crezca mejor.">
+    <link rel="canonical" href="https://zyberia.com.ar/">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Zyberia">
+    <meta name="geo.region" content="AR-T">
+    <meta name="geo.placename" content="San Miguel de Tucumán">
+
+    <!-- ═══ OPEN GRAPH (Facebook / LinkedIn / WhatsApp) ═══ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zyberia.com.ar/">
+    <meta property="og:title" content="Zyberia | Comunicación, Tecnología e Inteligencia Artificial">
+    <meta property="og:description" content="Diseñamos marcas, sistemas y soluciones digitales para que tu empresa comunique, opere y crezca mejor.">
+    <meta property="og:image" content="https://zyberia.com.ar/assets/og_zyberia.png">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Zyberia">
+
+    <!-- ═══ TWITTER / X CARD ═══ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zyberia | Comunicación, Tecnología e IA">
+    <meta name="twitter:description" content="Diseñamos marcas, sistemas y soluciones digitales para que tu empresa comunique, opere y crezca mejor.">
+    <meta name="twitter:image" content="https://zyberia.com.ar/assets/og_zyberia.png">
+
+    <!-- ═══ FAVICON ═══ -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+
+    <!-- ═══ SCHEMA.ORG ═══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Zyberia",
+      "url": "https://zyberia.com.ar",
+      "logo": "https://zyberia.com.ar/assets/og_zyberia.png",
+      "description": "Estudio de comunicación, tecnología e inteligencia artificial en Tucumán.",
+      "foundingDate": "2002",
+      "founders": [{
+        "@type": "Person",
+        "name": "Diego Cardoso"
+      }],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Balcarce 24",
+        "addressLocality": "San Miguel de Tucumán",
+        "addressRegion": "Tucumán",
+        "addressCountry": "AR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      },
+      "sameAs": [
+        "https://zyberia.com.ar"
+      ]
+    }
+    </script>
+
+    <!-- ═══ FONTS ═══ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-zyberia">ZYBERIA</span>
+            </a>
+            
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#problema">El Problema</a></li>
+                <li><a href="#propuesta">Nuestro Enfoque</a></li>
+                <li><a href="#capacidades">Capacidades</a></li>
+                <li><a href="#zyberia-os">Zyberia OS</a></li>
+                <li><a href="#soluciones">A Medida</a></li>
+                <li><a href="#casos">Casos</a></li>
+                <li><a href="#historia">Origen</a></li>
+                <li><a href="#contacto" class="nav-cta">Hablemos</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================================================
+         01 — HERO (Posicionamiento Integrado)
+         ================================================== -->
+    <section id="hero" class="hero-dark hero-section">
+        <canvas id="particles-bg"></canvas>
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="hero-badge">COMUNICACIÓN + TECNOLOGÍA + INTELIGENCIA ARTIFICIAL</div>
+                    <h1 class="interactive-text">
+                        No solamente comunicamos empresas.<br>
+                        <span class="text-yellow">Construimos lo que necesitan para crecer.</span>
+                    </h1>
+                    <p class="section-desc text-left text-white">
+                        Somos un estudio de comunicación, tecnología e inteligencia artificial. Diseñamos marcas, sistemas y soluciones digitales para que las empresas comuniquen, operen y crezcan mejor.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#capacidades" class="btn btn-gold btn-lg">Ver Soluciones ➔</a>
+                        <a href="#zyberia-os" class="btn btn-primary btn-lg">Conocé Zyberia OS ⚡</a>
+                    </div>
+                </div>
+
+                <!-- Columna Gráfico/Media (Derecha): SCROLLTELLING INTERACTIVO CINEMATOGRÁFICO DE 8 ESCENAS -->
+                <div class="col-media">
+                    <div class="hero-scrolltelling-stage" id="hero-stage">
+                        <!-- Barra de Progreso y Paso -->
+                        <div class="stage-progress-bar">
+                            <div class="progress-fill" id="hero-progress-fill" style="width: 12%;"></div>
+                            <span class="stage-step-label" id="hero-step-label">PASO 1 / 8 — CAPTURAR PRODUCTO</span>
+                        </div>
+
+                        <!-- Contenedor de Escenas -->
+                        <div class="stage-scene-wrapper">
+                            
+                            <!-- ESCENA 01: Captura con Celular y Escaneo EAN -->
+                            <div class="scene-layer scene-01 active" id="scene-01">
+                                <div class="mobile-frame-mockup">
+                                    <div class="mobile-camera-overlay">
+                                        <span class="camera-target-box"></span>
+                                        <div class="scan-laser-line" id="scan-laser"></div>
+                                        <span class="cam-badge">📷 CAPTURAR PRODUCTO</span>
+                                    </div>
+                                    <img src="assets/hero_product_abrazadera.png" alt="Abrazadera Inox 25mm" class="captured-product-img">
+                                </div>
+                                <div class="scan-result-tag" id="scan-result">
+                                    <span class="check-icon">✓</span>
+                                    <div>
+                                        <strong>PRODUCTO IDENTIFICADO</strong>
+                                        <span>ABRAZADERA INOX 25 MM | SKU: AB-25-INOX</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 04: Ficha Inteligente y Módulos de Análisis -->
+                            <div class="scene-layer scene-04" id="scene-04">
+                                <div class="smart-card-hero">
+                                    <div class="card-hero-head">
+                                        <span class="tag-sku">SKU: AB-25-INOX</span>
+                                        <h3>ABRAZADERA INOX 25 MM</h3>
+                                        <span class="tag-brand">Marca: ACEROMAX</span>
+                                    </div>
+                                    <div class="card-hero-metrics">
+                                        <div class="metric-box">
+                                            <span>Costo Actual:</span>
+                                            <strong class="font-mono">$3.600</strong>
+                                        </div>
+                                        <div class="metric-box highlight">
+                                            <span>Precio Venta:</span>
+                                            <strong class="font-mono text-green">$4.500</strong>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span>Stock:</span>
+                                            <strong class="font-mono">83 u.</strong>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span>Margen:</span>
+                                            <strong class="font-mono text-yellow">25%</strong>
+                                        </div>
+                                    </div>
+
+                                    <!-- Módulos de Análisis Conectados -->
+                                    <div class="connected-modules-row" id="connected-modules">
+                                        <span class="module-chip active">📊 Mercado</span>
+                                        <span class="module-chip active">💡 Precios</span>
+                                        <span class="module-chip active">📈 Competencia</span>
+                                        <span class="module-chip active">📦 Stock</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 06: Oportunidad Detectada -->
+                            <div class="scene-layer scene-06" id="scene-06">
+                                <div class="hero-opp-card-alert">
+                                    <div class="opp-alert-badge">⚡ OPORTUNIDAD DETECTADA</div>
+                                    <h4>Encontramos este producto a $3.150</h4>
+                                    <div class="opp-delta-box">
+                                        <div class="delta-item">
+                                            <span class="lbl">Costo Actual</span>
+                                            <span class="val">$3.600</span>
+                                        </div>
+                                        <span class="delta-arrow">➔</span>
+                                        <div class="delta-item">
+                                            <span class="lbl">Costo Encontrado</span>
+                                            <span class="val text-yellow">$3.150</span>
+                                        </div>
+                                    </div>
+                                    <div class="opp-savings-pill">
+                                        <span>AHORRO POTENCIAL:</span>
+                                        <strong class="text-green">$450 / unidad</strong>
+                                    </div>
+                                    <p class="opp-rec-sub">"Zyberia recomienda evaluar esta alternativa de abastecimiento."</p>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 07: Pieza Comercial Generada y Listo para Vender -->
+                            <div class="scene-layer scene-07" id="scene-07">
+                                <div class="generated-flyer-wrapper">
+                                    <div class="flyer-generation-badge">🎨 PIEZA COMERCIAL GENERADA POR ENZO IA</div>
+                                    <div class="flyer-card-preview">
+                                        <img src="assets/hero_generated_flyer.png" alt="Flyer promocional generado por Zyberia OS" class="flyer-img">
+                                    </div>
+                                    <div class="ready-to-sell-tags" id="ready-tags">
+                                        <span class="sell-tag">✓ CATÁLOGO WEB</span>
+                                        <span class="sell-tag">✓ MARKETPLACE</span>
+                                        <span class="sell-tag">✓ WHATSAPP</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Navegación por Pasos Interactivos -->
+                        <div class="stage-dots-nav">
+                            <span class="dot active" data-step="0" title="1. Capturar Producto"></span>
+                            <span class="dot" data-step="1" title="2. Escaneo EAN"></span>
+                            <span class="dot" data-step="2" title="3. Reconocimiento IA"></span>
+                            <span class="dot" data-step="3" title="4. Ficha Inteligente"></span>
+                            <span class="dot" data-step="4" title="5. Análisis Mercado"></span>
+                            <span class="dot" data-step="5" title="6. Oportunidad Detectada"></span>
+                            <span class="dot" data-step="6" title="7. Generar Pieza Comercial"></span>
+                            <span class="dot" data-step="7" title="8. Listo para Vender"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll para explorar</span>
+            <div class="mouse-icon"></div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         02 — EL PROBLEMA (El Dolor Operativo)
+         ================================================== -->
+    <section id="problema" class="section problem-human-section alt-bg">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="problem-header-badge">EL DIAGNÓSTICO</div>
+                    <h2 class="section-title text-left">Las empresas no necesitan <br><span class="text-yellow">más herramientas aisladas.</span></h2>
+                    <p class="section-desc text-left">
+                        Tener que vender por WhatsApp, registrar las transacciones en una planilla manual, actualizar el stock a mano en el mostrador y gestionar campañas de publicidad que no conocen tus márgenes financieros reales.
+                    </p>
+                    <p class="section-desc text-left">
+                        El verdadero cuello de botella de los negocios no es la falta de herramientas; es la fragmentación. Cuando tu comunicación digital no está integrada con tus sistemas y tu operación diaria, el crecimiento se vuelve lento y costoso.
+                    </p>
+                </div>
+
+                <!-- Columna Gráfico/Notificaciones (Derecha) -->
+                <div class="col-media">
+                    <div class="notifications-chaos-grid">
+                        <div class="notif-card notif-whatsapp">
+                            <div class="notif-icon">💬</div>
+                            <div class="notif-body">
+                                <strong>Llegan WhatsApps</strong>
+                                <span>Mensajes comerciales sin responder</span>
+                            </div>
+                            <span class="notif-badge badge-green">PENDIENTE</span>
+                        </div>
+
+                        <div class="notif-card notif-providers">
+                            <div class="notif-icon">📦</div>
+                            <div class="notif-body">
+                                <strong>Llegan proveedores</strong>
+                                <span>Facturas pendientes de carga</span>
+                            </div>
+                            <span class="notif-badge badge-amber">EN ESPERA</span>
+                        </div>
+
+                        <div class="notif-card notif-invoices">
+                            <div class="notif-icon">📄</div>
+                            <div class="notif-body">
+                                <strong>Cambio de precios</strong>
+                                <span>Listas desactualizadas</span>
+                            </div>
+                            <span class="notif-badge badge-red">DESAFECTADO</span>
+                        </div>
+
+                        <div class="notif-card notif-stock">
+                            <div class="notif-icon">📉</div>
+                            <div class="notif-body">
+                                <strong>Baja el stock</strong>
+                                <span>Productos clave sin reposición</span>
+                            </div>
+                            <span class="notif-badge badge-red">CRÍTICO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         03 — NUESTRA FORMA DE PENSAR (La Propuesta)
+         ================================================== -->
+    <section id="propuesta" class="section conceptual-transformation-section">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <!-- Columna Gráfico/Flujo (Izquierda) -->
+                <div class="col-media">
+                    <div class="transformation-flow-grid" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+                        <div class="flow-step-card" style="width: 100%; max-width: 100%;">
+                            <span class="flow-step-num">01</span>
+                            <h4>LA COMUNICACIÓN ATRAE</h4>
+                            <p>Branding, marca, reputación y diseño audiovisual de alto impacto para captar atención.</p>
+                        </div>
+                        <div class="flow-step-card highlight-cyan" style="width: 100%; max-width: 100%;">
+                            <span class="flow-step-num">02</span>
+                            <h4>LA TECNOLOGÍA SOSTIENE</h4>
+                            <p>Sistemas estables, automatizaciones y flujos de datos sin errores que sostienen la operación.</p>
+                        </div>
+                        <div class="flow-step-card highlight-gold" style="width: 100%; max-width: 100%;">
+                            <span class="flow-step-num">03</span>
+                            <h4>LA IA POTENCIA</h4>
+                            <p>Modelos de lenguaje aplicados para optimizar decisiones y agilizar la creación de piezas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Texto (Derecha) -->
+                <div class="col-text">
+                    <div class="section-badge">NUESTRO ENFOQUE</div>
+                    <h2 class="section-title text-left">La intersección donde el diseño <br><span class="text-yellow">encuentra a la ingeniería.</span></h2>
+                    
+                    <div class="conceptual-quote-box">
+                        <p class="conceptual-main-text">"Un gran software es inútil si tus clientes no entienden el valor de tu marca."</p>
+                        <p class="conceptual-sub-text">Y la mejor campaña de comunicación fracasa si la operación detrás no es ágil y ordenada. En Zyberia trabajamos en el punto exacto donde la comunicación, la tecnología y la inteligencia artificial se cruzan para resolver problemas reales de negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         04 — CAPACIDADES (Comunicar / Operar / Crecer)
+         ================================================== -->
+    <section id="capacidades" class="section demos-section alt-bg">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 60px;">
+                <div class="section-badge" style="margin: 0 auto 20px;">QUÉ PODEMOS RESOLVER</div>
+                <h2 class="section-title">Soluciones integradas para tu negocio</h2>
+            </div>
+            
+            <div class="demos-grid-5 reveal">
+                <!-- Comunicar -->
+                <div class="demo-card-v2" style="background: #111111; border: 1px solid rgba(255,255,255,0.08); padding: 30px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;">
+                    <div>
+                        <span class="v2-tag" style="background: rgba(255,199,0,0.1); color: #ffc700; border: 1px solid rgba(255,199,0,0.2);">COMUNICAR</span>
+                        <h3 class="text-white" style="font-size: 1.4rem; margin-top: 20px; line-height: 1.2;">Construimos marcas que hacen visible el valor de tu empresa</h3>
+                        <p style="color: #999999; font-size: 0.95rem; margin-top: 15px; line-height: 1.5;">Diseñamos la identidad de tu negocio y producimos piezas audiovisuales premium para que tu comunicación refleje la calidad real de tu trabajo y resuene en los canales digitales.</p>
+                    </div>
+                    <div style="border-t: 1px solid rgba(255,255,255,0.05); pt: 15px; color: #ffc700; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
+                        Identidad • Branding • Arte
+                    </div>
+                </div>
+
+                <!-- Operar -->
+                <div class="demo-card-v2" style="background: #111111; border: 1px solid rgba(255,255,255,0.08); padding: 30px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;">
+                    <div>
+                        <span class="v2-tag" style="background: rgba(6,182,212,0.1); color: #06b6d4; border: 1px solid rgba(6,182,212,0.2);">OPERAR</span>
+                        <h3 class="text-white" style="font-size: 1.4rem; margin-top: 20px; line-height: 1.2;">Herramientas y automatizaciones adaptadas a tu forma real de trabajar</h3>
+                        <p style="color: #999999; font-size: 0.95rem; margin-top: 15px; line-height: 1.5;">Desarrollamos soluciones de software e integraciones que ordenan tu operación interna. Eliminamos tareas repetitivas y conectamos las herramientas que ya usás.</p>
+                    </div>
+                    <div style="border-t: 1px solid rgba(255,255,255,0.05); pt: 15px; color: #06b6d4; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
+                        Software • Integraciones • n8n
+                    </div>
+                </div>
+
+                <!-- Crecer -->
+                <div class="demo-card-v2" style="background: #111111; border: 1px solid rgba(255,255,255,0.08); padding: 30px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;">
+                    <div>
+                        <span class="v2-tag" style="background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.2);">CRECER</span>
+                        <h3 class="text-white" style="font-size: 1.4rem; margin-top: 20px; line-height: 1.2;">Hacemos que tu empresa sea encontrada por quienes buscan tu servicio</h3>
+                        <p style="color: #999999; font-size: 0.95rem; margin-top: 15px; line-height: 1.5;">Estructuramos tu sitio web bajo arquitectura SEO semántica local para capturar intenciones de búsqueda concretas y optimizamos el diseño de tus páginas para maximizar los contactos.</p>
+                    </div>
+                    <div style="border-t: 1px solid rgba(255,255,255,0.05); pt: 15px; color: #10b981; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
+                        SEO Local • Landings • Conversión
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         05 — ZYBERIA OS: PRUEBA DE CAPACIDAD (SCROLLTELLING VIDEO)
+         ================================================== -->
+    <section id="video-intro" class="section video-intro-section alt-bg text-center">
+        <div class="container">
+            <div class="section-badge" style="margin: 0 auto 20px;">NUESTRA PRUEBA DE FUERZA (PROOF OF WORK)</div>
+            <h2 class="section-title">Zyberia OS en acción real</h2>
+            <p class="section-desc centered">En lugar de contarte lo que somos capaces de construir, preferimos mostrarte algo que ya construimos y está funcionando en el mercado real.</p>
+        </div>
+    </section>
+
+    <!-- Video Scroll Scrubbing -->
+    <section id="scrolltelling" class="v-scroll-container">
+        <div class="v-sticky-wrapper">
+            <video id="scrolltelling-video" class="v-scrub" playsinline muted preload="auto">
+                <source src="assets/video nuevo.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption-bar fullscreen-caption">
+                <span class="v-badge">DEMO INTERACTIVA DE ZYBERIA OS</span>
+                <p id="video-scroll-status">Scrolleá para avanzar la película ➔</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Laptop Mockup Details -->
+    <section id="zyberia-os" class="section dashboard-showcase-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="section-badge">PRODUCTO PROPIO</div>
+                    <h2 class="section-title text-left">Zyberia OS: nuestro sistema de gestión comercial con IA</h2>
+                    <p class="section-desc text-left">
+                        Diseñamos esta plataforma desde cero para unificar el inventario, el punto de venta (POS) rápido, las cuentas corrientes de proveedores y clientes, y el acceso desde dispositivos móviles.
+                    </p>
+                    <p class="section-desc text-left" style="font-size: 1.05rem; color: #555;">
+                        Zyberia OS es nuestro sistema propio y podemos adaptarlo a las necesidades de distintos negocios. Integra un creador automático de piezas promocionales con IA textual para agilizar tus campañas de WhatsApp y redes.
+                    </p>
+                    <ul class="features-list" style="margin-bottom: 30px;">
+                        <li>✓ <strong>Punto de Venta (POS):</strong> Facturación y caja rápida.</li>
+                        <li>✓ <strong>Inventario Inteligente:</strong> Control de stock e historial de reposiciones.</li>
+                        <li>✓ <strong>Diseño de Flyers IA:</strong> Creación rápida de imágenes promocionales en segundos.</li>
+                        <li>✓ <strong>Operación Móvil:</strong> Escáner de código de barras mediante cámara.</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-gold btn-lg">Solicitar Demo de Zyberia OS ➔</a>
+                </div>
+
+                <!-- Columna Gráfico/Laptop (Derecha) -->
+                <div class="col-media">
+                    <div class="dashboard-laptop-mockup">
+                        <img src="assets/zyberia_dashboard_showcase_1786050960831.png" alt="Interface real de Zyberia OS" class="laptop-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         06 — SOLUCIONES A MEDIDA (Desarrollo y Automatización)
+         ================================================== -->
+    <section id="soluciones" class="section cases-section alt-bg">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <!-- Columna Gráfico/Showcase (Izquierda) -->
+                <div class="col-media">
+                    <div class="use-cases-grid-showcase">
+                        <div class="uc-box">
+                            <div class="uc-emoji">⚡</div>
+                            <h3>Automatizar</h3>
+                            <p>Eliminamos tareas repetitivas y digitalizamos procesos manuales que quitan tiempo.</p>
+                        </div>
+
+                        <div class="uc-box">
+                            <div class="uc-emoji">🔌</div>
+                            <h3>Integrar</h3>
+                            <p>Conectamos bases de datos, CRMs y herramientas de mensajería que hoy funcionan separados.</p>
+                        </div>
+
+                        <div class="uc-box">
+                            <div class="uc-emoji">💻</div>
+                            <h3>Construir</h3>
+                            <p>Desarrollamos soluciones de software a medida cuando los sistemas enlatados no alcanzan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Texto (Derecha) -->
+                <div class="col-text">
+                    <div class="section-badge">DESARROLLO EXCLUSIVO</div>
+                    <h2 class="section-title text-left">Sistemas que se adaptan a tu negocio, <br><span class="text-gold">no al revés.</span></h2>
+                    <p class="section-desc text-left">No creemos en plantillas genéricas. Analizamos tu operación diaria, identificamos cuellos de botella y desarrollamos la infraestructura tecnológica exacta que necesita tu empresa para escalar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         07 — CASOS REALES (Validación en Terreno)
+         ================================================== -->
+    <section id="casos" class="section service-showcase-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <div class="col-text">
+                    <span class="service-badge">CASO DE ESTUDIO</span>
+                    <h2 class="text-left">Acosta Motomecánica: <span class="text-yellow">Estructura web y posicionamiento local.</span></h2>
+                    <p class="text-left">Desarrollamos el sitio web y la arquitectura SEO local para Acosta Motomecánica, un taller de alineación y enderezado de chasis en San Miguel de Tucumán.</p>
+                    <p class="text-left" style="font-size: 1.05rem; color: #555;">
+                        Diseñamos una estructura semántica específica para captar la intención de búsqueda real de los usuarios en la región y optimizamos la interfaz móvil bajo nuestro playbook de conversión para facilitar el agendamiento directo de turnos por WhatsApp.
+                    </p>
+                    <a href="https://acostamotomecanica.com.ar" target="_blank" class="btn btn-gold btn-lg">Ver Sitio Web de Acosta ➔</a>
+                </div>
+                <div class="col-media">
+                    <img src="assets/branding.png" alt="Desarrollo web y SEO Acosta" class="showcase-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         08 — HISTORIA Y ORIGEN (Trayectoria del Fundador)
+         ================================================== -->
+    <section id="historia" class="section coms-intro-section alt-bg">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text" style="text-align: left;">
+                    <div class="section-badge">NUESTRO ORIGEN</div>
+                    <h2 class="section-title text-left" style="margin-bottom: 10px;">De Macintosh a la <br><span class="text-yellow">inteligencia artificial</span></h2>
+                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #666; margin-bottom: 30px;">No empezamos con la IA. La IA es el siguiente capítulo.</h3>
+                    
+                    <div style="font-size: 1.1rem; color: #999999; line-height: 1.7; display: flex; flex-direction: column; gap: 20px;" class="text-white">
+                        <p>Para nosotros, la combinación de comunicación y tecnología no es una estrategia de marketing reciente; es un camino de aprendizaje que comenzó hace más de veinte años.</p>
+                        
+                        <p>De la composición digital con las primeras computadoras Macintosh a finales de los noventa, pasando por el diseño interactivo cuando la web todavía no tenía herramientas prefabricadas, hasta la Dirección de Arte. Nuestra trayectoria siempre estuvo en el punto de encuentro entre contar una idea y construir la herramienta para sostenerla.</p>
+                        
+                        <p>La inteligencia artificial no es una moda para nosotros; es el siguiente capítulo de esa evolución.</p>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="quienes-somos.html" class="btn btn-gold btn-lg">Conocé Nuestra Historia ➔</a>
+                    </div>
+                </div>
+
+                <!-- Columna Gráfico/Detalle (Derecha) -->
+                <div class="col-media" style="align-self: center;">
+                    <div class="future-statement-box" style="border-left: 5px solid var(--color-yellow); background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 40px; border-radius: 24px; text-align: left;">
+                        <span style="font-family: var(--font-primary); font-size: 0.8rem; font-weight: bold; color: var(--color-yellow); letter-spacing: 2px; text-transform: uppercase;">FILOSOFÍA DE ORIGEN</span>
+                        <p style="font-size: 1.3rem; line-height: 1.5; color: #FFFFFF; font-weight: 500; margin-top: 15px; margin-bottom: 20px;">
+                            "No queremos parecer una empresa que dice que hace innovación. Queremos que nuestra propia historia demuestre que siempre estuvimos experimentando con nuevas herramientas."
+                        </p>
+                        <span style="font-size: 0.9rem; color: #888888; font-weight: bold;">ZYBERIA • DESDE 2002</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         09 — CONTACTO Y CIERRE (Diagnóstico Integral)
+         ================================================== -->
+    <footer id="contacto" class="footer-section">
+        <div class="container text-center hero-closing reveal" style="margin-bottom: 60px;">
+            <div class="section-title" style="font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; font-weight: 700; text-transform: uppercase;">
+                No solamente comunicamos empresas.<br>
+                Construimos lo que necesitan para crecer.<br>
+                <span class="text-gold">MENOS COMPLEJIDAD. MÁS RESULTADOS.</span>
+            </div>
+        </div>
+
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo" style="font-size: 1.8rem; font-weight: 700; color: var(--color-white); letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-primary); margin-bottom: 10px;">ZYBERIA</div>
+                <p class="footer-eslogan">Estudio de Comunicación, Tecnología e IA</p>
+                <p class="footer-subtext">Diseñamos marcas, sistemas y soluciones digitales para que tu negocio comunique, opere y crezca mejor.</p>
+                <p class="footer-address">Balcarce 24 • San Miguel de Tucumán, Argentina</p>
+            </div>
+            
+            <div class="footer-form-box">
+                <h3>¿Qué necesitás mejorar hoy?</h3>
+                <form id="contact-form" class="manifesto-form">
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Email corporativo" required>
+                    <input type="tel" placeholder="WhatsApp de contacto" required>
+                    
+                    <div style="text-align: left; margin: 15px 0 25px;">
+                        <label style="font-size: 0.85rem; font-weight: bold; color: #bbbbbb; display: block; margin-bottom: 10px;">¿Qué área de tu empresa querés potenciar?</label>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <label style="display: flex; items-center; gap: 8px; font-size: 0.8rem; color: #cccccc; cursor: pointer;">
+                                <input type="radio" name="area_potenciar" value="comunicar" required> COMUNICAR: Mejorar marca, contenido o presencia digital.
+                            </label>
+                            <label style="display: flex; items-center; gap: 8px; font-size: 0.8rem; color: #cccccc; cursor: pointer;">
+                                <input type="radio" name="area_potenciar" value="operar"> OPERAR: Ordenar sistemas, integrar herramientas o automatizar.
+                            </label>
+                            <label style="display: flex; items-center; gap: 8px; font-size: 0.8rem; color: #cccccc; cursor: pointer;">
+                                <input type="radio" name="area_potenciar" value="crecer"> CRECER: Posicionamiento web para conseguir más clientes.
+                            </label>
+                            <label style="display: flex; items-center; gap: 8px; font-size: 0.8rem; color: #cccccc; cursor: pointer;">
+                                <input type="radio" name="area_potenciar" value="zyberia_os"> EXPLORAR ZYBERIA OS: Conocer el sistema comercial con IA.
+                            </label>
+                        </div>
+                    </div>
+
+                    <textarea placeholder="Contanos brevemente sobre tu negocio o cuello de botella" rows="3" style="width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px; color: #ffffff; font-family: var(--font-primary); font-size: 0.85rem; margin-bottom: 20px; outline: none; resize: none;"></textarea>
+                    
+                    <button type="submit" class="btn btn-gold btn-block">Solicitar Diagnóstico Comercial ➔</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Zyberia. Todos los derechos reservados. Comunicación + Tecnología + Inteligencia Artificial.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYBERIA OS | Sistema Operativo Comercial & Inteligencia Comercial</title>
+    <meta name="description" content="Zyberia OS es el sistema operativo comercial que entiende cada producto, analiza el mercado, detecta oportunidades y ayuda a convertirlas en ventas.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-zyberia">ZYBERIA</span>
+            </a>
+            
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#concepto-oportunidad">El Concepto</a></li>
+                <li><a href="#ficha-demo">Ficha Inteligente</a></li>
+                <li><a href="#radar-margen">Radar de Margen</a></li>
+                <li><a href="#demostraciones">Demostraciones</a></li>
+                <li><a href="#equipo-digital">Equipo Digital</a></li>
+                <li><a href="#futuro-inteligente">El Futuro</a></li>
+                <li><a href="#comunicacion">Zyberia Comunicación</a></li>
+                <li><a href="#contacto" class="nav-cta">Hablemos</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================================================
+         1. HERO: 2 COLUMNAS (TEXTO IZQ | MOCKUP DER)
+         ================================================== -->
+    <section id="hero" class="hero-dark hero-section">
+        <canvas id="particles-bg"></canvas>
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="hero-badge">SISTEMA OPERATIVO COMERCIAL DE NUEVA GENERACIÓN</div>
+                    <h1 class="interactive-text">
+                        ZYBERIA NO ADMINISTRA PRODUCTOS.<br>
+                        <span class="text-yellow">LOS CONVIERTE EN OPORTUNIDADES.</span>
+                    </h1>
+                    <div class="hero-vision-tag">
+                        <span>EL FUTURO DE LAS EMPRESAS SERÁ INTELIGENTE.</span>
+                    </div>
+                    <p class="section-desc text-left">
+                        Un sistema operativo comercial que entiende cada producto, analiza el mercado, detecta oportunidades y ayuda a convertirlas en ventas.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#concepto-oportunidad" class="btn btn-gold btn-lg">Explorar Oportunidades ⚡</a>
+                        <a href="#ficha-demo" class="btn btn-primary btn-lg">Ver Ficha Inteligente ➔</a>
+                    </div>
+                </div>
+
+                <!-- Columna Gráfico/Media (Derecha): SCROLLTELLING INTERACTIVO CINEMATOGRÁFICO DE 8 ESCENAS -->
+                <div class="col-media">
+                    <div class="hero-scrolltelling-stage" id="hero-stage">
+                        <!-- Barra de Progreso y Paso -->
+                        <div class="stage-progress-bar">
+                            <div class="progress-fill" id="hero-progress-fill" style="width: 12%;"></div>
+                            <span class="stage-step-label" id="hero-step-label">PASO 1 / 8 — CAPTURAR PRODUCTO</span>
+                        </div>
+
+                        <!-- Contenedor de Escenas Cinematográficas -->
+                        <div class="stage-scene-wrapper">
+                            
+                            <!-- ESCENA 01 & 02: Captura con Celular y Escaneo EAN -->
+                            <div class="scene-layer scene-01 active" id="scene-01">
+                                <div class="mobile-frame-mockup">
+                                    <div class="mobile-camera-overlay">
+                                        <span class="camera-target-box"></span>
+                                        <div class="scan-laser-line" id="scan-laser"></div>
+                                        <span class="cam-badge">📷 CAPTURAR PRODUCTO</span>
+                                    </div>
+                                    <img src="assets/hero_product_abrazadera.png" alt="Abrazadera Inox 25mm" class="captured-product-img">
+                                </div>
+                                <div class="scan-result-tag" id="scan-result">
+                                    <span class="check-icon">✓</span>
+                                    <div>
+                                        <strong>PRODUCTO IDENTIFICADO</strong>
+                                        <span>ABRAZADERA INOX 25 MM | SKU: AB-25-INOX</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 03 & 04 & 05: Reconocimiento IA, Ficha Inteligente y Módulos de Análisis -->
+                            <div class="scene-layer scene-04" id="scene-04">
+                                <div class="smart-card-hero">
+                                    <div class="card-hero-head">
+                                        <span class="tag-sku">SKU: AB-25-INOX</span>
+                                        <h3>ABRAZADERA INOX 25 MM</h3>
+                                        <span class="tag-brand">Marca: ACEROMAX</span>
+                                    </div>
+                                    <div class="card-hero-metrics">
+                                        <div class="metric-box">
+                                            <span>Costo Actual:</span>
+                                            <strong class="font-mono">$3.600</strong>
+                                        </div>
+                                        <div class="metric-box highlight">
+                                            <span>Precio Venta:</span>
+                                            <strong class="font-mono text-green">$4.500</strong>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span>Stock:</span>
+                                            <strong class="font-mono">83 u.</strong>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span>Margen:</span>
+                                            <strong class="font-mono text-yellow">25%</strong>
+                                        </div>
+                                    </div>
+
+                                    <!-- Módulos de Análisis Conectados -->
+                                    <div class="connected-modules-row" id="connected-modules">
+                                        <span class="module-chip active">📊 Mercado</span>
+                                        <span class="module-chip active">💡 Precios</span>
+                                        <span class="module-chip active">📈 Competencia</span>
+                                        <span class="module-chip active">📦 Stock</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 06: Oportunidad Detectada -->
+                            <div class="scene-layer scene-06" id="scene-06">
+                                <div class="hero-opp-card-alert">
+                                    <div class="opp-alert-badge">⚡ OPORTUNIDAD DETECTADA</div>
+                                    <h4>Encontramos este producto a $3.150</h4>
+                                    <div class="opp-delta-box">
+                                        <div class="delta-item">
+                                            <span class="lbl">Costo Actual</span>
+                                            <span class="val">$3.600</span>
+                                        </div>
+                                        <span class="delta-arrow">➔</span>
+                                        <div class="delta-item">
+                                            <span class="lbl">Costo Encontrado</span>
+                                            <span class="val text-yellow">$3.150</span>
+                                        </div>
+                                    </div>
+                                    <div class="opp-savings-pill">
+                                        <span>AHORRO POTENCIAL:</span>
+                                        <strong class="text-green">$450 / unidad</strong>
+                                    </div>
+                                    <p class="opp-rec-sub">"Zyberia recomienda evaluar esta alternativa de abastecimiento."</p>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 07 & 08: Pieza Comercial Generada y Listo para Vender -->
+                            <div class="scene-layer scene-07" id="scene-07">
+                                <div class="generated-flyer-wrapper">
+                                    <div class="flyer-generation-badge">🎨 PIEZA COMERCIAL GENERADA POR ENZO IA</div>
+                                    <div class="flyer-card-preview">
+                                        <img src="assets/hero_generated_flyer.png" alt="Flyer promocional generado por Zyberia OS" class="flyer-img">
+                                    </div>
+                                    <div class="ready-to-sell-tags" id="ready-tags">
+                                        <span class="sell-tag">✓ CATÁLOGO WEB</span>
+                                        <span class="sell-tag">✓ MARKETPLACE</span>
+                                        <span class="sell-tag">✓ WHATSAPP</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Navegación por Pasos Interactivos -->
+                        <div class="stage-dots-nav">
+                            <span class="dot active" data-step="0" title="1. Capturar Producto"></span>
+                            <span class="dot" data-step="1" title="2. Escaneo EAN"></span>
+                            <span class="dot" data-step="2" title="3. Reconocimiento IA"></span>
+                            <span class="dot" data-step="3" title="4. Ficha Inteligente"></span>
+                            <span class="dot" data-step="4" title="5. Análisis Mercado"></span>
+                            <span class="dot" data-step="5" title="6. Oportunidad Detectada"></span>
+                            <span class="dot" data-step="6" title="7. Generar Pieza Comercial"></span>
+                            <span class="dot" data-step="7" title="8. Listo para Vender"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll para explorar</span>
+            <div class="mouse-icon"></div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         2. CONCEPTO: FLUJO COMPLETO DE PRODUCTO A PIEZA GRÁFICA & VENTA
+         ================================================== -->
+    <section id="concepto-oportunidad" class="section conceptual-transformation-section alt-bg">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <!-- Columna Gráfico/Flujo (Izquierda) -->
+                <div class="col-media">
+                    <div class="product-flow-visual-box">
+                        <img src="assets/product_flow_diagram.png" alt="Flujo completo de Producto a Pieza Gráfica en Zyberia OS" class="flow-diagram-img">
+                    </div>
+
+                    <!-- Pasos del Flujo -->
+                    <div class="transformation-flow-grid">
+                        <div class="flow-step-card">
+                            <span class="flow-step-num">01</span>
+                            <h4>INGRESO INVENTARIO</h4>
+                            <p>Foto factura / Escáner EAN</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+
+                        <div class="flow-step-card">
+                            <span class="flow-step-num">02</span>
+                            <h4>FICHA TÉCNICA</h4>
+                            <p>Costo, precio & stock</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+
+                        <div class="flow-step-card highlight-cyan">
+                            <span class="flow-step-num">03</span>
+                            <h4>RADAR DE MARGEN</h4>
+                            <p>Detección de oportunidad</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+
+                        <div class="flow-step-card highlight-gold">
+                            <span class="flow-step-num">04</span>
+                            <h4>AGENTES IA</h4>
+                            <p>Valentina & Enzo IA</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+
+                        <div class="flow-step-card highlight-purple">
+                            <span class="flow-step-num">05</span>
+                            <h4>PIEZA GRÁFICA</h4>
+                            <p>Flyer publicitario listo</p>
+                        </div>
+                        <div class="flow-arrow">➔</div>
+
+                        <div class="flow-step-card highlight-green">
+                            <span class="flow-step-num">06</span>
+                            <h4>DIFUSIÓN & VENTA</h4>
+                            <p>Catálogo & WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Texto (Derecha) -->
+                <div class="col-text">
+                    <div class="section-badge">FLUJO COMERCIAL INTEGRAL</div>
+                    <h2 class="section-title text-left">DE PRODUCTO FÍSICO A <br><span class="text-yellow">PIEZA GRÁFICA & VENTA</span></h2>
+                    
+                    <div class="conceptual-quote-box">
+                        <p class="conceptual-main-text">"Un producto ya no queda atrapado en una planilla."</p>
+                        <p class="conceptual-sub-text">Desde que ingresa al inventario (por foto de factura o escaneo), Zyberia interpreta su margen, activa al equipo digital, diseña la pieza promocional y la publica para generar ventas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         3. FICHA INTELIGENTE: 2 COLUMNAS (TEXTO IZQ | FICHA DER)
+         ================================================== -->
+    <section id="ficha-demo" class="section product-ficha-demo-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="section-badge">INTERVENCIÓN EN TIEMPO REAL</div>
+                    <h2 class="section-title text-left">DE DATOS A OPORTUNIDADES <br><span class="text-yellow">EN SEGUNDOS</span></h2>
+                    <p class="section-desc text-left">
+                        No te mostramos datos por mostrar datos. Te mostramos información únicamente cuando te ayuda a tomar una decisión comercial concreta.
+                    </p>
+                    <div class="quote-card-box">
+                        <p class="quote-text">INFORMACIÓN ➔ INTERPRETACIÓN ➔ ACCIÓN</p>
+                    </div>
+                </div>
+
+                <!-- Columna Gráfico/Ficha (Derecha) -->
+                <div class="col-media">
+                    <div class="smart-ficha-container">
+                        <div class="smart-ficha-card">
+                            <div class="smart-ficha-header">
+                                <div class="smart-ficha-title">
+                                    <span class="sku-badge">SKU: AB-25-INOX</span>
+                                    <h3>ABRAZADERA 25 MM</h3>
+                                    <span class="supplier-tag">Proveedor: GOMATEC</span>
+                                </div>
+                                <div class="smart-ficha-actions">
+                                    <span class="ai-action-btn">⚡ ACCIONES IA</span>
+                                </div>
+                            </div>
+
+                            <div class="smart-ficha-grid">
+                                <div class="smart-data-box">
+                                    <div class="data-row">
+                                        <span>Costo actual:</span>
+                                        <strong class="font-mono">$3.600</strong>
+                                    </div>
+                                    <div class="data-row highlight-price">
+                                        <span>Precio de venta:</span>
+                                        <strong class="font-mono text-green">$4.500</strong>
+                                    </div>
+                                    <div class="data-row">
+                                        <span>Stock disponible:</span>
+                                        <strong class="font-mono">83 unidades</strong>
+                                    </div>
+                                    <div class="data-row">
+                                        <span>Mercado ref:</span>
+                                        <strong class="font-mono text-cyan">$4.100 - $5.200</strong>
+                                    </div>
+                                </div>
+
+                                <div class="smart-opportunity-highlight-card">
+                                    <div class="opp-header">
+                                        <span class="opp-badge">🟡 OPORTUNIDAD DETECTADA</span>
+                                    </div>
+                                    <p class="opp-statement">"Encontramos este producto a $3.150 en otra fuente."</p>
+                                    <p class="opp-substatement">Podrías reducir tu costo aproximadamente $450 por unidad y mejorar tu margen manteniendo tu precio de venta actual.</p>
+                                    
+                                    <div class="opp-action-bar">
+                                        <a href="#contacto" class="btn-opp-cta">VER OPORTUNIDAD ➔</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="smart-ficha-footer">
+                                <div class="status-indicator-group">
+                                    <span class="ind-dot emerald">● Monitoreando margen</span>
+                                    <span class="ind-dot purple">● Monitoreando stock</span>
+                                    <span class="ind-dot cyan">● Detectando oportunidades</span>
+                                </div>
+                                <a href="#contacto" class="btn-informe-pill">Informe Agosto ➔</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         4. RADAR DE MARGEN: 2 COLUMNAS (RADAR CARDS IZQ | TEXTO DER)
+         ================================================== -->
+    <section id="radar-margen" class="section radar-section alt-bg">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <!-- Columna Gráfico/Tarjetas (Izquierda) -->
+                <div class="col-media">
+                    <div class="radar-cards-grid">
+                        <div class="radar-opportunity-card border-yellow">
+                            <div class="radar-card-badge yellow">🟡 OPORTUNIDAD DE MARGEN</div>
+                            <h3>Abrazadera 25 mm</h3>
+                            <p class="radar-main-text">"Encontramos este producto a $3.150 en Mercado Libre."</p>
+                            <div class="radar-metrics">
+                                <div>
+                                    <span class="lbl">Costo Actual</span>
+                                    <span class="val">$3.600</span>
+                                </div>
+                                <div>
+                                    <span class="lbl">Precio Mercado</span>
+                                    <span class="val text-yellow">$3.150</span>
+                                </div>
+                                <div>
+                                    <span class="lbl">Ahorro / U</span>
+                                    <span class="val text-green">$450</span>
+                                </div>
+                            </div>
+                            <div class="radar-rec">
+                                <strong>Zyberia recomienda:</strong> "Evaluá esta alternativa antes de comprar."
+                            </div>
+                        </div>
+
+                        <div class="radar-opportunity-card border-green">
+                            <div class="radar-card-badge green">🟢 ALTERNATIVA MÁS RENTABLE</div>
+                            <h3>Aerosol Art Mota (Equivalente)</h3>
+                            <p class="radar-main-text">"Encontramos una alternativa equivalente de otra marca a $2.850."</p>
+                            <div class="radar-metrics">
+                                <div>
+                                    <span class="lbl">Costo Actual</span>
+                                    <span class="val">$3.400</span>
+                                </div>
+                                <div>
+                                    <span class="lbl">Precio Eq.</span>
+                                    <span class="val text-green">$2.850</span>
+                                </div>
+                                <div>
+                                    <span class="lbl">Margen Potencial</span>
+                                    <span class="val text-green">+14%</span>
+                                </div>
+                            </div>
+                            <div class="radar-rec">
+                                <strong>Zyberia recomienda:</strong> "Compará especificaciones técnicas para maximizar margen."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Texto (Derecha) -->
+                <div class="col-text">
+                    <div class="section-badge">CAPACIDAD ESTRATÉGICA DE ABASTECIMIENTO</div>
+                    <h2 class="section-title text-left">RADAR DE <br><span class="text-yellow">MARGEN</span></h2>
+                    <p class="section-desc text-left">
+                        No es un comparador de precios genérico. Es un radar de inteligencia que busca oportunidades de costo en Mercado Libre, marketplaces, distribuidores y fuentes de mercado (mismo producto, misma marca, EAN o alternativas equivalentes).
+                    </p>
+
+                    <div class="radar-formula-bar">
+                        <span>ENCONTRAR</span> ➔ <span>INTERPRETAR</span> ➔ <span>RECOMENDAR</span> ➔ <span>ACCIONAR</span>
+                    </div>
+
+                    <div class="pilar-decisiones-banner" style="margin-top: 24px;">
+                        <h3 class="pilar-title">MENOS DATOS. <span class="text-yellow">MÁS DECISIONES.</span></h3>
+                        <p class="pilar-desc">DATO ➔ SIGNIFICADO ➔ ACCIÓN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TÍTULO PREVIO AL SCROLLTELLING -->
+    <section id="video-intro" class="section video-intro-section alt-bg text-center">
+        <div class="container">
+            <h2 class="section-title">DE PRODUCTOS DISPERSOS A <span class="text-yellow">OPORTUNIDADES DE VENTA</span></h2>
+            <p class="section-desc centered">Desplazate hacia abajo para ver cómo el equipo digital transforma la información en acciones comerciales reales.</p>
+        </div>
+    </section>
+
+    <!-- 6. VIDEO SCROLL HERO SECTION -->
+    <section id="scrolltelling" class="v-scroll-container">
+        <div class="v-sticky-wrapper">
+            <video id="scrolltelling-video" class="v-scrub" playsinline muted preload="auto">
+                <source src="assets/video nuevo.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption-bar fullscreen-caption">
+                <span class="v-badge">ZYBERIA OS</span>
+                <p id="video-scroll-status">Scrolleá para avanzar la película ➔</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         7. EL PROBLEMA HUMANO: 2 COLUMNAS (TEXTO IZQ | NOTIFICACIONES DER)
+         ================================================== -->
+    <section id="problema" class="section problem-human-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="problem-header-badge">SOBRECARGA OPERATIVA REAL</div>
+                    <h2 class="section-title text-left">MIENTRAS ATENDÉS <br><span class="text-yellow">CLIENTES...</span></h2>
+                    <p class="section-desc text-left">Cientos de tareas simultáneas compiten por tu atención todos los días.</p>
+
+                    <div class="human-conclusion-banner">
+                        <p class="sub-text">El problema nunca fue trabajar.</p>
+                        <h3 class="main-statement">EL PROBLEMA FUE TENER QUE HACERLO TODO SOLO.</h3>
+                    </div>
+                </div>
+
+                <!-- Columna Gráfico/Notificaciones (Derecha) -->
+                <div class="col-media">
+                    <div class="notifications-chaos-grid">
+                        <div class="notif-card notif-whatsapp">
+                            <div class="notif-icon">💬</div>
+                            <div class="notif-body">
+                                <strong>Llegan WhatsApps</strong>
+                                <span>12 mensajes sin responder</span>
+                            </div>
+                            <span class="notif-badge badge-green">NUEVO</span>
+                        </div>
+
+                        <div class="notif-card notif-providers">
+                            <div class="notif-icon">📦</div>
+                            <div class="notif-body">
+                                <strong>Llegan proveedores</strong>
+                                <span>Entrega de mercadería pendiente</span>
+                            </div>
+                            <span class="notif-badge badge-amber">EN CAMINO</span>
+                        </div>
+
+                        <div class="notif-card notif-invoices">
+                            <div class="notif-icon">📄</div>
+                            <div class="notif-body">
+                                <strong>Llegan facturas</strong>
+                                <span>Carga manual de precios</span>
+                            </div>
+                            <span class="notif-badge badge-red">URGENTE</span>
+                        </div>
+
+                        <div class="notif-card notif-stock">
+                            <div class="notif-icon">📉</div>
+                            <div class="notif-body">
+                                <strong>Baja el stock</strong>
+                                <span>Productos clave agotándose</span>
+                            </div>
+                            <span class="notif-badge badge-red">CRÍTICO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         8. DEMOSTRACIONES: 2 COLUMNAS (VIDEOS IZQ | TEXTO DER)
+         ================================================== -->
+    <section id="demostraciones" class="section demos-section alt-bg">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <!-- Columna Gráfico/Videos (Izquierda) -->
+                <div class="col-media">
+                    <div class="demos-grid-5">
+                        <div class="demo-card-v2">
+                            <div class="v2-media">
+                                <div class="play-btn-v2">▶</div>
+                                <span class="v2-tag">30 SEGUNDOS</span>
+                            </div>
+                            <div class="v2-info">
+                                <h3>Importador IA</h3>
+                                <p>Factura ➔ Inventario listo.</p>
+                            </div>
+                        </div>
+
+                        <div class="demo-card-v2">
+                            <div class="v2-media">
+                                <div class="play-btn-v2">▶</div>
+                                <span class="v2-tag">45 SEGUNDOS</span>
+                            </div>
+                            <div class="v2-info">
+                                <h3>Scanner Inteligente</h3>
+                                <p>Escaneo ➔ Publicación web.</p>
+                            </div>
+                        </div>
+
+                        <div class="demo-card-v2">
+                            <div class="v2-media">
+                                <div class="play-btn-v2">▶</div>
+                                <span class="v2-tag">1 MINUTO</span>
+                            </div>
+                            <div class="v2-info">
+                                <h3>Marketing IA</h3>
+                                <p>Oportunidad ➔ Oferta lista.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Texto (Derecha) -->
+                <div class="col-text">
+                    <div class="section-badge">DEMOSTRACIONES EN TIEMPO REAL</div>
+                    <h2 class="section-title text-left">MENOS EXPLICACIÓN. <br><span class="text-gold">MÁS DEMOSTRACIÓN.</span></h2>
+                    <p class="section-desc text-left">Mirá cómo Zyberia convierte tareas complejas en decisiones automatizadas en segundos.</p>
+                    <a href="#contacto" class="btn btn-gold btn-lg">Solicitar Demo Personalizada ➔</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         9. DASHBOARD SHOWCASE: 2 COLUMNAS (TEXTO IZQ | LAPTOP DER)
+         ================================================== -->
+    <section id="dashboard" class="section dashboard-showcase-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="section-badge">INTERFAZ DE ALTO NIVEL</div>
+                    <h2 class="section-title text-left">ZYBERIA OS EN <br><span class="text-gold">ACCIÓN REAL</span></h2>
+                    <p class="section-desc text-left">Diseñado con la elegancia de Stripe, la simplicidad de Notion y la velocidad de Apple.</p>
+                    <ul class="features-list">
+                        <li>✓ Visibilidad financiera en tiempo real</li>
+                        <li>✓ Márgenes netos por producto</li>
+                        <li>✓ Alertas automáticas de abastecimiento</li>
+                    </ul>
+                </div>
+
+                <!-- Columna Gráfico/Laptop (Derecha) -->
+                <div class="col-media">
+                    <div class="dashboard-laptop-mockup">
+                        <img src="assets/zyberia_dashboard_showcase_1786050960831.png" alt="Zyberia OS Dashboard Real Interface Mockup" class="laptop-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         10. EQUIPO DIGITAL: 2 COLUMNAS (CARDS IZQ | TEXTO DER)
+         ================================================== -->
+    <section id="equipo-digital" class="section team-section alt-bg">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <!-- Columna Gráfico/Agentes (Izquierda) -->
+                <div class="col-media">
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="assets/zyberia_agent_valentina_1786052200128.png" alt="Valentina IA">
+                            </div>
+                            <span class="team-role">RENTABILIDAD & MARGEN</span>
+                            <h3>Valentina IA</h3>
+                            <p>"Detecté oportunidad para mejorar margen en sourcing."</p>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="assets/zyberia_agent_enzo_1786052215864.png" alt="Enzo IA">
+                            </div>
+                            <span class="team-role gold">MARKETING & CONTENIDO</span>
+                            <h3>Enzo IA</h3>
+                            <p>"Pieza promocional limpia generada."</p>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="assets/lucas.png" alt="Lucas IA">
+                            </div>
+                            <span class="team-role">PUBLICACIÓN & CANALES</span>
+                            <h3>Lucas IA</h3>
+                            <p>"Campaña lista en canales de venta."</p>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="assets/mateo.png" alt="Mateo IA">
+                            </div>
+                            <span class="team-role">FIDELIZACIÓN</span>
+                            <h3>Mateo IA</h3>
+                            <p>"Clientes recontactados por WhatsApp."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Texto (Derecha) -->
+                <div class="col-text">
+                    <div class="section-badge">COLABORADORES IA ESPECIALIZADOS</div>
+                    <h2 class="section-title text-left">TU NEGOCIO TIENE UN <br><span class="text-gold">EQUIPO DIGITAL</span></h2>
+                    <p class="section-desc text-left">Un equipo digital integrado que encuentra oportunidades concretas y actúa sobre ellas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         11. REGISTRO EN VIVO: 2 COLUMNAS (TEXTO IZQ | CHAT DER)
+         ================================================== -->
+    <section id="chat-feed" class="section chat-feed-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Izquierda: Texto -->
+                <div class="col-text">
+                    <div class="section-badge">AUTONOMÍA COMERCIAL 24/7</div>
+                    <h2 class="section-title text-left">
+                        EL SISTEMA <br><span class="text-gold">TRABAJANDO 24/7</span>
+                    </h2>
+                    <p class="section-desc text-left">
+                        Registro dinámico en vivo de oportunidades convertidas en ventas. Tu equipo digital analiza el mercado, prepara las ofertas y concreta ventas de forma automatizada.
+                    </p>
+                    
+                    <div class="chat-feed-highlights">
+                        <div class="feed-stat-item">
+                            <span class="stat-num text-yellow">100%</span>
+                            <span class="stat-lbl">Trazabilidad Comercial</span>
+                        </div>
+                        <div class="feed-stat-item">
+                            <span class="stat-num text-green">0.8s</span>
+                            <span class="stat-lbl">Reacción a Oportunidades</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Feed Terminal -->
+                <div class="col-media">
+                    <div class="slack-feed-box">
+                        <div class="slack-header">
+                            <span class="status-dot"></span> #zyberia-actividad-vivo
+                        </div>
+                        <div class="slack-messages">
+                            <div class="slack-msg">
+                                <span class="time">10:31</span>
+                                <strong class="author author-valentina">Valentina IA</strong>
+                                <p class="text">Detecté oportunidad de margen en Abrazadera 25mm (Ahorro $450/u en sourcing).</p>
+                            </div>
+
+                            <div class="slack-msg">
+                                <span class="time">10:32</span>
+                                <strong class="author author-enzo">Enzo IA</strong>
+                                <p class="text">Flyer publicitario de oferta por combo 2x generado.</p>
+                            </div>
+
+                            <div class="slack-msg">
+                                <span class="time">10:33</span>
+                                <strong class="author author-lucas">Lucas IA</strong>
+                                <p class="text">Publicación realizada en catálogo web y canales comerciales.</p>
+                            </div>
+
+                            <div class="slack-msg">
+                                <span class="time">10:35</span>
+                                <strong class="author author-mateo">Mateo IA</strong>
+                                <p class="text">Cliente Constructora Mario recontactado con beneficio de volumen.</p>
+                            </div>
+
+                            <div class="slack-msg success">
+                                <span class="time">10:41</span>
+                                <strong class="author author-system">El Sistema</strong>
+                                <p class="text">✅ Oportunidad convertida en venta registrada: $149.999. Stock actualizado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         12. CASOS DE USO: 2 COLUMNAS (SHOWCASE IZQ | TEXTO DER)
+         ================================================== -->
+    <section id="casos-de-uso" class="section cases-section alt-bg">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <!-- Columna Gráfico/Showcase (Izquierda) -->
+                <div class="col-media">
+                    <div class="use-cases-grid-showcase">
+                        <div class="uc-box">
+                            <div class="uc-emoji">🛒</div>
+                            <h3>Comercio & Retail</h3>
+                            <p>Inventario inteligente ➔ Margen ➔ Ventas</p>
+                        </div>
+
+                        <div class="uc-box">
+                            <div class="uc-emoji">🍕</div>
+                            <h3>Gastronomía</h3>
+                            <p>Insumos ➔ Costo platos ➔ Promos</p>
+                        </div>
+
+                        <div class="uc-box">
+                            <div class="uc-emoji">🏥</div>
+                            <h3>Salud & Clínica</h3>
+                            <p>Turnos ➔ Pacientes ➔ Cobros</p>
+                        </div>
+
+                        <div class="uc-box">
+                            <div class="uc-emoji">🏍</div>
+                            <h3>Taller & Repuestos</h3>
+                            <p>Repuestos ➔ WhatsApp ➔ Postventa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Texto (Derecha) -->
+                <div class="col-text">
+                    <div class="section-badge">ADAPTABILIDAD MULTI-RUBRO</div>
+                    <h2 class="section-title text-left">DISEÑADO PARA NEGOCIOS QUE <br><span class="text-gold">ESTÁN CRECIENDO</span></h2>
+                    <p class="section-desc text-left">Zyberia OS se adapta automáticamente a las reglas comerciales de cualquier industria.</p>
+
+                    <div class="industry-pills-bar" style="margin-top: 24px;">
+                        <span class="ind-pill active">Comercio</span>
+                        <span class="ind-pill">Taller</span>
+                        <span class="ind-pill">Restaurante</span>
+                        <span class="ind-pill">Tienda</span>
+                        <span class="ind-pill">Servicios</span>
+                        <span class="ind-pill">Salud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         13. PUENTE VISIÓN DE FUTURO: 2 COLUMNAS (TEXTO IZQ | BOX DER)
+         ================================================== -->
+    <section id="futuro-inteligente" class="section future-vision-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <!-- Columna Texto (Izquierda) -->
+                <div class="col-text">
+                    <div class="section-badge">VISIÓN DE CATEGORÍA</div>
+                    <h2 class="section-title text-left">EL FUTURO DE LAS EMPRESAS <br><span class="text-yellow">NO SERÁ SOLO DIGITAL.</span></h2>
+                    <h3 class="future-subtitle text-left">SERÁ INTELIGENTE.</h3>
+                </div>
+
+                <!-- Columna Gráfico/Box (Derecha) -->
+                <div class="col-media">
+                    <div class="future-statement-box">
+                        <p>"Las empresas del futuro no tendrán simplemente más software. Tendrán sistemas capaces de comprender lo que está pasando, detectar oportunidades y actuar sobre ellas."</p>
+                        <h4 class="future-bridge">Zyberia está construyendo esa nueva generación de empresas.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. ZYBERIA COMUNICACIÓN: MARCA & POSICIONAMIENTO ÉLITE -->
+    <section id="comunicacion" class="section coms-intro-section alt-bg text-center">
+        <div class="container">
+            <h2 class="section-title">ZYBERIA <span class="text-yellow">COMUNICACIÓN</span></h2>
+            <p class="section-desc centered">Cuando un negocio ya entiende sus datos, la creatividad y el posicionamiento pueden ser exponencialmente más efectivos.</p>
+        </div>
+    </section>
+
+    <!-- Servicio 1: Branding con Autoridad -->
+    <section id="branding" class="section service-showcase-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <div class="col-text">
+                    <span class="service-badge">01. BRANDING & IDENTIDAD</span>
+                    <h2 class="text-left">Branding con <span class="text-yellow">Autoridad.</span></h2>
+                    <p class="text-left">Construimos ecosistemas visuales de alto nivel. Aseguramos que cada punto de contacto de tu marca respire exclusividad y lidere su mercado.</p>
+                    <ul class="features-list">
+                        <li>✓ Identidad Visual de Alto Impacto</li>
+                        <li>✓ Producción Audiovisual Premium</li>
+                        <li>✓ Posicionamiento Élite en el Mercado</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-gold btn-lg">Diseñar Mi Autoridad ➔</a>
+                </div>
+                <div class="col-media">
+                    <img src="assets/branding.png" alt="Branding con Autoridad" class="showcase-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicio 2: Producción Audiovisual Premium -->
+    <section id="produccion" class="section service-showcase-section alt-bg">
+        <div class="container">
+            <div class="grid-2col media-left-text-right reveal">
+                <div class="col-media">
+                    <img src="assets/produccion.png" alt="Producción Audiovisual Premium" class="showcase-img">
+                </div>
+                <div class="col-text">
+                    <span class="service-badge">02. PRODUCCIÓN AUDIOVISUAL</span>
+                    <h2 class="text-left">Contenido que <span class="text-yellow">Domina el Feed.</span></h2>
+                    <p class="text-left">Creamos piezas audiovisuales de alta gama diseñadas para algoritmos. Si tu marca no se ve premium, tu precio tampoco podrá serlo.</p>
+                    <div class="quote-card-box">
+                        <p class="quote-text">“La atención es la nueva moneda del mercado.”</p>
+                    </div>
+                    <a href="#contacto" class="btn btn-gold btn-lg">Dominar el Feed ➔</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicio 3: Web & eCommerce High-Speed -->
+    <section id="web" class="section service-showcase-section">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <div class="col-text">
+                    <span class="service-badge">03. DESARROLLO WEB & E-COMMERCE</span>
+                    <h2 class="text-left">Web & eCommerce <span class="text-yellow">High-Speed</span></h2>
+                    <p class="text-left">Sitios web de nivel élite con carga instantánea. Optimizados para la conversión máxima desde el primer clic.</p>
+                    <div class="speed-metric-card">
+                        <div class="speed-counter">0.8s</div>
+                        <span class="speed-label">CARGA PROMEDIO DE VELOCIDAD</span>
+                    </div>
+                    <a href="#contacto" class="btn btn-gold btn-lg">Acelerar Mi Web ➔</a>
+                </div>
+                <div class="col-media">
+                    <img src="assets/hero_intermediate.png" alt="Web & eCommerce High-Speed" class="showcase-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. CIERRE ÉPICO Y CONTACTO -->
+    <footer id="contacto" class="footer-section">
+        <div class="container text-center hero-closing reveal" style="margin-bottom: 60px;">
+            <h2 class="section-title">
+                ZYBERIA NO ADMINISTRA PRODUCTOS.<br>
+                LOS CONVIERTE EN OPORTUNIDADES.<br>
+                <span class="text-gold">MENOS DATOS. MÁS DECISIONES.</span>
+            </h2>
+            <a href="#contact-form" class="btn btn-gold btn-lg" style="margin-top: 24px; font-size: 1.1rem;">Solicitar Diagnóstico Comercial ➔</a>
+        </div>
+
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="footer-logo">ZYBERIA</h2>
+                <p class="footer-eslogan">Sistema Operativo Comercial de Nueva Generación</p>
+                <p class="footer-subtext">Tu negocio sigue siendo tuyo. Ahora cada producto puede convertirse en una oportunidad.</p>
+                <p class="footer-address">Balcarce 24 • San Miguel de Tucumán, Argentina</p>
+            </div>
+            
+            <div class="footer-form-box">
+                <h3>Solicitá tu Diagnóstico Comercial</h3>
+                <form id="contact-form" class="manifesto-form">
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Email corporativo" required>
+                    <input type="tel" placeholder="Teléfono / WhatsApp" required>
+                    <select required>
+                        <option value="">¿Qué querés potenciar hoy?</option>
+                        <option value="os">Zyberia OS (Sistema Operativo Comercial)</option>
+                        <option value="comunicacion">Zyberia Comunicación (Marca & Posicionamiento)</option>
+                        <option value="ambos">Ecosistema Completo (OS + Comunicación)</option>
+                    </select>
+                    <button type="submit" class="btn btn-gold btn-block">Solicitar Diagnóstico ➔</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Zyberia. Todos los derechos reservados. Sistema Operativo Comercial + Inteligencia Comercial.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
