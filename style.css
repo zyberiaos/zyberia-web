@@ -224,7 +224,7 @@ p, .section-desc {
 .btn-block { width: 100%; justify-content: center; }
 
 /* 1. Hero White Section */
-.hero-white, .hero-section {
+.hero-white {
   position: relative;
   min-height: 95vh;
   display: flex;
@@ -235,6 +235,12 @@ p, .section-desc {
   padding-bottom: 80px;
   background: var(--color-white);
   overflow: hidden;
+}
+/* .hero-section needs overflow:visible for position:sticky to work */
+.hero-section {
+  position: relative;
+  background: var(--color-white);
+  overflow: visible !important; /* CRITICAL: sticky breaks with overflow:hidden */
 }
 
 #particles-bg {
@@ -2101,6 +2107,8 @@ html, body {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     display: block !important; /* Override flex from .hero-dark to allow sticky */
+    overflow: visible !important; /* CRITICAL: sticky breaks with overflow:hidden */
+    min-height: auto !important;
 }
 
 .hero-section > .container {
@@ -2200,7 +2208,8 @@ html, body {
     /* Convertir el hero a sección estática */
     .hero-section {
         height: auto !important;
-        min-height: 100svh; /* svh = sin salto cuando aparece/desaparece la barra del browser */
+        min-height: 100svh;
+        overflow: visible !important;
     }
 
     /* El container no debe ser sticky en móvil */
