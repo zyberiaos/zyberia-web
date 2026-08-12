@@ -2105,6 +2105,7 @@ html, body {
     position: relative;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    display: block !important; /* Override flex from .hero-dark to allow sticky */
 }
 
 .hero-section > .container {
