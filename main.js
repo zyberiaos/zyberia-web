@@ -315,4 +315,99 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  // 10. FICHA INTELIGENTE - MOCKUP DROPDOWN
+  const iaBtn = document.querySelector('.ia-btn');
+  const iaDropdown = document.querySelector('.ia-dropdown');
+  if (iaBtn && iaDropdown) {
+    iaBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      iaDropdown.style.display = iaDropdown.style.display === 'none' || iaDropdown.style.display === '' ? 'block' : 'none';
+    });
+
+    const closeDropdown = document.querySelector('.ia-dropdown span[style*="cursor: pointer"]');
+    if (closeDropdown) {
+      closeDropdown.addEventListener('click', () => {
+        iaDropdown.style.display = 'none';
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!iaDropdown.contains(e.target) && !iaBtn.contains(e.target)) {
+        iaDropdown.style.display = 'none';
+      }
+    });
+  }
+
+  // 11. CAROUSEL OFICINAS
+  const carouselTrack = document.getElementById('carousel-track');
+  const carouselSlides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (carouselTrack && carouselSlides.length > 0 && prevBtn && nextBtn) {
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      carouselSlides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.classList.add('active-slide');
+        } else {
+          slide.classList.remove('active-slide');
+        }
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % carouselSlides.length;
+      updateCarousel();
+    });
+
+    // Inicializar
+    updateCarousel();
+  }
+
+  // 12. BILLING TOGGLE (PLANES)
+  const billingCheckbox = document.getElementById('billing-period-checkbox');
+  const priceValues = document.querySelectorAll('.price-value');
+  const periodLabels = document.querySelectorAll('.period');
+  const monthlyLabel = document.querySelector('.billing-monthly');
+  const yearlyLabel = document.querySelector('.billing-yearly');
+
+  if (billingCheckbox) {
+      billingCheckbox.addEventListener('change', (e) => {
+          const isYearly = e.target.checked;
+          
+          if (isYearly) {
+              monthlyLabel.classList.remove('active');
+              yearlyLabel.classList.add('active');
+          } else {
+              yearlyLabel.classList.remove('active');
+              monthlyLabel.classList.add('active');
+          }
+
+          priceValues.forEach(el => {
+              // Animación simple de desvanecimiento
+              el.style.opacity = 0;
+              setTimeout(() => {
+                  el.textContent = isYearly ? el.getAttribute('data-yearly') : el.getAttribute('data-monthly');
+                  el.style.opacity = 1;
+              }, 200);
+          });
+          
+          periodLabels.forEach(el => {
+              el.style.opacity = 0;
+              setTimeout(() => {
+                  el.textContent = isYearly ? '/mes (facturado anual)' : '/mes';
+                  el.style.opacity = 1;
+              }, 200);
+          });
+      });
+  }
+
 });
