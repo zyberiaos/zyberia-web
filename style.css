@@ -2190,7 +2190,75 @@ html, body {
     }
 }
 
-/* 3. Video Scrolltelling Fix */
+/* ============================================================
+   MOBILE FIX: Desactivar scrolltelling del hero en celulares
+   El hero de 400vh causa un "espacio negro" enorme en móvil
+   porque position:sticky no genera el mismo efecto que en desktop.
+   En celulares mostramos el hero estático a 100svh.
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Convertir el hero a sección estática */
+    .hero-section {
+        height: auto !important;
+        min-height: 100svh; /* svh = sin salto cuando aparece/desaparece la barra del browser */
+    }
+
+    /* El container no debe ser sticky en móvil */
+    .hero-section > .container {
+        position: relative !important;
+        height: auto !important;
+        min-height: calc(100svh - 80px);
+        padding-top: 100px !important;
+        padding-bottom: 40px !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+
+    .hero-section .grid-2col {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    /* Escenas: colapsar todas, mostrar solo .active */
+    .scene-layer {
+        position: relative !important;
+        inset: auto !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+        transform: none !important;
+    }
+    .scene-layer.active {
+        opacity: 1 !important;
+        height: auto !important;
+        min-height: 180px !important;
+        overflow: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Stage: simplificar en móvil */
+    .hero-scrolltelling-stage {
+        transform: none !important;
+        padding: 16px !important;
+        max-width: 100% !important;
+    }
+
+    /* Ocultar barra de progreso y dots en móvil */
+    .stage-progress-bar { display: none !important; }
+    .stage-dots-nav { display: none !important; }
+
+    /* Reducir mobile frame mockup */
+    .mobile-frame-mockup {
+        width: 150px !important;
+        height: 190px !important;
+    }
+}
+
+
 #scrolltelling {
     height: 300vh;
     position: relative;
@@ -2229,22 +2297,64 @@ html, body {
     border-radius: 10px;
 }
 
-/* 4. White text on white background fixes */
+/* 4. Text color global fixes - light sections vs dark sections */
+
+/* section-desc: dark in light sections, white in dark sections */
 .section-desc {
-    color: var(--color-gray-dark) !important;
+    color: #444444 !important;
 }
-.hero-section .section-desc, 
-.hero-dark .section-desc, 
-.footer-subtext, 
+.hero-section .section-desc,
+.hero-dark .section-desc,
+.footer-subtext,
 .footer-eslogan,
 .video-caption-bar p {
     color: var(--color-white) !important;
 }
+
+/* section-badge: dark in light sections, yellow in dark */
 .hero-badge, .section-badge {
     color: var(--color-gray-dark);
 }
 .hero-dark .hero-badge {
     color: var(--color-yellow);
+}
+
+/* ==================================================
+   FIX CRÍTICO: TEXTO AMARILLO/BLANCO EN SECCIONES CLARAS
+   El color amarillo #F8E71C es INVISIBLE sobre fondos blancos.
+   En secciones sin fondo oscuro usamos un amber oscuro legible.
+   ================================================== */
+
+/* Amber oscuro para .text-yellow y .text-gold en secciones claras */
+section:not(.hero-dark) .text-yellow,
+section:not(.hero-dark) .text-gold {
+    color: #b07800 !important;     /* Amber oscuro - legible sobre blanco */
+    text-shadow: none !important;  /* Sin glow - solo funciona sobre fondos oscuros */
+}
+
+/* Preservar el amarillo brillante solo en el hero oscuro y el footer */
+.hero-dark .text-yellow,
+.footer-section .text-yellow,
+.footer-section .text-gold,
+footer .text-yellow,
+footer .text-gold {
+    color: var(--color-yellow) !important;
+    text-shadow: 0 0 10px rgba(248, 231, 28, 0.5) !important;
+}
+
+/* Sección HISTORIA (#historia): texto blanco explícito sobre fondo claro */
+.coms-intro-section .text-white,
+.coms-intro-section .col-text .text-white p {
+    color: #333333 !important;
+}
+
+/* El future-statement-box en HISTORIA necesita fondo oscuro propio */
+.coms-intro-section .future-statement-box {
+    background: #111111 !important;
+    border-color: rgba(248,231,28,0.25) !important;
+}
+.coms-intro-section .future-statement-box p {
+    color: #f0f0f0 !important;
 }
 
 /* ==================================================
