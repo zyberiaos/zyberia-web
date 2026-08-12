@@ -1115,14 +1115,9 @@ video.v-scrub {
 .hero-dark {
   background: radial-gradient(circle at 50% 30%, #161618 0%, #08080a 70%, #000000 100%) !important;
   color: var(--color-white) !important;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-top: 130px;
-  padding-bottom: 80px;
+  /* padding handled by .hero-section sticky container */
 }
 
 .hero-dark h1 {
@@ -1189,7 +1184,7 @@ video.v-scrub {
 
 .stage-scene-wrapper {
   position: relative;
-  min-height: 380px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2111,16 +2106,27 @@ html, body {
 .hero-section > .container {
     position: sticky !important;
     top: 0;
-    height: 100dvh; /* dvh handles mobile address bar better */
+    height: 100dvh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 80px !important; /* navbar height compensation */
+    padding-bottom: 20px !important;
+    box-sizing: border-box;
+}
+
+.hero-section .grid-2col {
+    align-items: center;
+    height: 100%;
+    max-height: calc(100dvh - 100px);
+    overflow: hidden;
 }
 
 .hero-scrolltelling-stage {
-    position: sticky !important;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    top: auto;
+    transform: none;
 }
 
 @media (max-width: 992px) {
@@ -2135,6 +2141,52 @@ html, body {
     .hero-scrolltelling-stage {
         transform: scale(0.85);
         transform-origin: top center;
+    }
+}
+
+/* Short-screen fix: laptop with taskbar (~641px viewport height) */
+@media (max-height: 720px) {
+    .hero-section > .container {
+        padding-top: 70px !important;
+        padding-bottom: 10px !important;
+    }
+    .hero-dark h1,
+    .hero-section .interactive-text {
+        font-size: clamp(1.6rem, 2.8vw, 2.4rem) !important;
+        margin-bottom: 10px;
+    }
+    .hero-section .section-desc {
+        font-size: 0.85rem !important;
+        margin-bottom: 12px;
+    }
+    .hero-section .hero-badge {
+        font-size: 0.65rem;
+        padding: 5px 12px;
+        margin-bottom: 12px;
+    }
+    .hero-actions {
+        gap: 10px !important;
+    }
+    .hero-actions .btn {
+        padding: 10px 20px !important;
+        font-size: 0.85rem !important;
+    }
+    .hero-scrolltelling-stage {
+        padding: 14px !important;
+    }
+    .stage-progress-bar {
+        height: 22px;
+        margin-bottom: 10px;
+    }
+    .stage-scene-wrapper {
+        min-height: 230px !important;
+    }
+    .mobile-frame-mockup {
+        width: 160px !important;
+        height: 210px !important;
+    }
+    .stage-dots-nav {
+        margin-top: 10px !important;
     }
 }
 
