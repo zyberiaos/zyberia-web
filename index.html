@@ -421,9 +421,36 @@
             <video id="scrolltelling-video" class="v-scrub" playsinline muted preload="auto">
                 <source src="assets/video nuevo.mp4" type="video/mp4">
             </video>
-            <div class="video-caption-bar fullscreen-caption">
-                <span class="v-badge">DEMO INTERACTIVA DE ZYBERIA OS</span>
-                <p id="video-scroll-status">Scrolleá para avanzar la película ➔</p>
+            <div class="video-caption-bar fullscreen-caption" style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 12px 20px;
+                background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                pointer-events: none;
+            ">
+                <span class="v-badge" style="
+                    background: transparent;
+                    color: rgba(255,255,255,0.45);
+                    font-size: 0.6rem;
+                    font-weight: 700;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    border: none;
+                    padding: 0;
+                    border-radius: 0;
+                ">DEMO · ZYBERIA OS</span>
+                <p id="video-scroll-status" style="
+                    color: rgba(255,255,255,0.4);
+                    font-size: 0.65rem;
+                    margin: 0;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                ">Scrolleá para avanzar ↓</p>
             </div>
         </div>
     </section>
