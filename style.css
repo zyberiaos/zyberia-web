@@ -1738,10 +1738,10 @@ video.v-scrub {
   font-weight: 900;
 }
 
-.flow-step-card.highlight-cyan { border-color: rgba(6, 182, 212, 0.4); background: rgba(6, 182, 212, 0.05); }
-.flow-step-card.highlight-gold { border-color: rgba(248, 231, 28, 0.5); background: rgba(248, 231, 28, 0.08); }
-.flow-step-card.highlight-purple { border-color: rgba(168, 85, 247, 0.5); background: rgba(168, 85, 247, 0.08); }
-.flow-step-card.highlight-green { border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.05); }
+.flow-step-card.highlight-cyan { border-color: rgba(6, 182, 212, 0.4); background: #11181a; }
+.flow-step-card.highlight-gold { border-color: rgba(248, 231, 28, 0.5); background: #1a1811; }
+.flow-step-card.highlight-purple { border-color: rgba(168, 85, 247, 0.5); background: #18111a; }
+.flow-step-card.highlight-green { border-color: rgba(16, 185, 129, 0.4); background: #111a15; }
 
 .product-flow-visual-box {
   background: #0d0d0f;
@@ -2198,74 +2198,6 @@ html, body {
     }
 }
 
-/* ============================================================
-   MOBILE FIX: Desactivar scrolltelling del hero en celulares
-   El hero de 400vh causa un "espacio negro" enorme en móvil
-   porque position:sticky no genera el mismo efecto que en desktop.
-   En celulares mostramos el hero estático a 100svh.
-   ============================================================ */
-@media (max-width: 768px) {
-    /* Convertir el hero a sección estática */
-    .hero-section {
-        height: auto !important;
-        min-height: 100svh;
-        overflow: visible !important;
-    }
-
-    /* El container no debe ser sticky en móvil */
-    .hero-section > .container {
-        position: relative !important;
-        height: auto !important;
-        min-height: calc(100svh - 80px);
-        padding-top: 100px !important;
-        padding-bottom: 40px !important;
-        overflow: visible !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-    }
-
-    .hero-section .grid-2col {
-        max-height: none !important;
-        overflow: visible !important;
-    }
-
-    /* Escenas: colapsar todas, mostrar solo .active */
-    .scene-layer {
-        position: relative !important;
-        inset: auto !important;
-        opacity: 0 !important;
-        height: 0 !important;
-        min-height: 0 !important;
-        overflow: hidden !important;
-        pointer-events: none !important;
-        transform: none !important;
-    }
-    .scene-layer.active {
-        opacity: 1 !important;
-        height: auto !important;
-        min-height: 180px !important;
-        overflow: visible !important;
-        pointer-events: auto !important;
-    }
-
-    /* Stage: simplificar en móvil */
-    .hero-scrolltelling-stage {
-        transform: none !important;
-        padding: 16px !important;
-        max-width: 100% !important;
-    }
-
-    /* Ocultar barra de progreso y dots en móvil */
-    .stage-progress-bar { display: none !important; }
-    .stage-dots-nav { display: none !important; }
-
-    /* Reducir mobile frame mockup */
-    .mobile-frame-mockup {
-        width: 150px !important;
-        height: 190px !important;
-    }
-}
 
 
 #scrolltelling {
