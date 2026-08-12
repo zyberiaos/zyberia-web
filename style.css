@@ -2198,6 +2198,69 @@ html, body {
     }
 }
 
+/* ============================================================
+   MOBILE FIX: Hero estático sin scrolltelling
+   A pedido del usuario, desactivamos las escenas en móvil para
+   que quede una sola imagen visible y centrada.
+   ============================================================ */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto !important;
+        min-height: 100svh !important;
+        overflow: hidden !important; /* Desactiva sticky permanentemente en móvil */
+        padding-bottom: 40px !important;
+    }
+    .hero-section > .container {
+        position: relative !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding-top: 100px !important;
+        padding-bottom: 20px !important;
+        overflow: visible !important;
+    }
+    .hero-section .grid-2col {
+        max-height: none !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .hero-scrolltelling-stage {
+        transform: none !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    .stage-scene-wrapper {
+        min-height: 280px !important;
+    }
+    .scene-layer {
+        position: relative !important;
+        inset: auto !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+    .scene-layer.active {
+        opacity: 1 !important;
+        height: auto !important;
+        min-height: 250px !important;
+        overflow: visible !important;
+        pointer-events: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .stage-progress-bar, .stage-dots-nav { 
+        display: none !important; 
+    }
+    .mobile-frame-mockup {
+        width: 160px !important;
+        height: 210px !important;
+    }
+}
 
 
 #scrolltelling {
