@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
   console.log('🚀 ZYBERIA Master Tech Web Initialized with Particles Canvas Engine');
 
   // 1. Reveal Elements on Scroll
@@ -408,6 +408,36 @@ document.addEventListener('DOMContentLoaded', () => {
               }, 200);
           });
       });
+  }
+  // --- Dynamic Form Intent Switcher ---
+  const areaRadios = document.querySelectorAll('input[name="area_potenciar"]');
+  const formTitle = document.getElementById('form-intent-title');
+  const formTextarea = document.getElementById('form-intent-textarea');
+  const formBtn = document.getElementById('form-intent-btn');
+
+  if (areaRadios.length > 0 && formTitle && formTextarea && formBtn) {
+    const updateFormIntent = (val) => {
+      if (val === 'operar') {
+        formTitle.textContent = 'Cotizar Proyecto a Medida';
+        formTextarea.placeholder = 'Describí brevemente tu proceso operativo actual y qué te gustaría automatizar, integrar o desarrollar...';
+        formBtn.textContent = 'Cotizar Proyecto a Medida ➔';
+      } else if (val === 'zyberia_os') {
+        formTitle.textContent = 'Solicitar Demo de Zyberia OS';
+        formTextarea.placeholder = 'Contanos sobre tu negocio (rubro, locales, sistemas que usás actualmente y volumen de productos)...';
+        formBtn.textContent = 'Solicitar Demo Real ➔';
+      } else {
+        // comunicar o crecer
+        formTitle.textContent = 'Solicitar Diagnóstico Comercial';
+        formTextarea.placeholder = 'Contanos brevemente sobre tu negocio y tus objetivos en comunicación, imagen o captación de clientes...';
+        formBtn.textContent = 'Solicitar Diagnóstico Comercial ➔';
+      }
+    };
+
+    areaRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        updateFormIntent(e.target.value);
+      });
+    });
   }
 
 });
