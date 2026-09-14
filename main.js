@@ -441,3 +441,133 @@
   }
 
 });
+
+/* ==================================================
+   MATEO — WHATSAPP COMMERCIAL AI BOT LOGIC (SUPERCHARGED + AGENCY SERVICES)
+   ================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.getElementById('wa-bot-trigger');
+    const modal = document.getElementById('wa-bot-modal');
+    const closeBtn = document.getElementById('wa-bot-close');
+    const form = document.getElementById('wa-bot-form');
+    const input = document.getElementById('wa-bot-input');
+    const messagesContainer = document.getElementById('wa-bot-messages');
+
+    if (!trigger || !modal) return;
+
+    // Toggle Modal
+    trigger.addEventListener('click', () => {
+        const isHidden = modal.style.display === 'none' || modal.style.display === '';
+        modal.style.display = isHidden ? 'flex' : 'none';
+        if (isHidden && input) input.focus();
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    const appendMessage = (sender, text, isHtml = false, showWaBtn = false, waCustomText = '') => {
+        const msgDiv = document.createElement('div');
+        msgDiv.style.maxWidth = '88%';
+        msgDiv.style.fontSize = '0.83rem';
+        msgDiv.style.lineHeight = '1.45';
+        msgDiv.style.padding = '10px 14px';
+        msgDiv.style.borderRadius = '14px';
+        msgDiv.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+
+        if (sender === 'user') {
+            msgDiv.style.background = '#005c4b';
+            msgDiv.style.color = '#e9edef';
+            msgDiv.style.alignSelf = 'flex-end';
+            msgDiv.style.borderRadius = '14px 0px 14px 14px';
+        } else {
+            msgDiv.style.background = '#202c33';
+            msgDiv.style.color = '#e9edef';
+            msgDiv.style.alignSelf = 'flex-start';
+            msgDiv.style.borderLeft = '3px solid #25D366';
+            msgDiv.style.borderRadius = '0px 14px 14px 14px';
+        }
+
+        if (isHtml) {
+            msgDiv.innerHTML = text;
+        } else {
+            msgDiv.textContent = text;
+        }
+
+        if (showWaBtn) {
+            const btnText = waCustomText || '📲 Solicitar Asesoramiento por WhatsApp ➔';
+            const waBtn = document.createElement('a');
+            waBtn.href = 'https://wa.me/5491112345678?text=Hola%20Zyberia!%20Quiero%20asesoramiento%20sobre%20los%20servicios%20de%20comunicacion%20y%20el%20sistema%20Zyberia%20OS';
+            waBtn.target = '_blank';
+            waBtn.style.display = 'inline-flex';
+            waBtn.style.alignItems = 'center';
+            waBtn.style.gap = '6px';
+            waBtn.style.marginTop = '10px';
+            waBtn.style.background = '#25D366';
+            waBtn.style.color = '#111b21';
+            waBtn.style.padding = '7px 14px';
+            waBtn.style.borderRadius = '12px';
+            waBtn.style.fontWeight = '700';
+            waBtn.style.fontSize = '0.76rem';
+            waBtn.style.textDecoration = 'none';
+            waBtn.innerHTML = btnText;
+            msgDiv.appendChild(waBtn);
+        }
+
+        messagesContainer.appendChild(msgDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    const processBotReply = (query) => {
+        const q = query.toLowerCase();
+
+        if (q.includes('whatsapp_real')) {
+            window.open('https://wa.me/5491112345678?text=Hola%20Zyberia!%20Quiero%20consultar%20por%20servicios%20de%20comunicacion%20o%20el%20sistema%20Zyberia%20OS', '_blank');
+            appendMessage('bot', '¡Perfecto! Te abrí una ventana de WhatsApp directo para hablar con un especialista de Zyberia.', false);
+            return;
+        }
+
+        if (q.includes('servicios_agencia') || q.includes('servicios') || q.includes('agencia') || q.includes('diseño') || q.includes('arte') || q.includes('marca') || q.includes('branding') || q.includes('marketing') || q.includes('publicidad') || q.includes('copywriting')) {
+            appendMessage('bot', '<strong>🎨 Servicios de Agencia — Zyberia Comunicación:</strong><br><br>Zyberia no es solo software; somos una agencia integral de Comunicación + Tecnología + IA:<br><br>• 🖼️ <strong>Dirección de Arte & Diseño Visual:</strong> Identidad de marca, branding, diseño de packaging y flyers promocionales HD para tu catálogo y redes.<br>• 📣 <strong>Marketing Digital & e-Advertising:</strong> Estrategia publicitaria, campañas de captación de prospectos y embudos de conversión.<br>• ✍️ <strong>Copywriting & Estrategia Comercial:</strong> Redacción persuasiva, promociones por volumen y posicionamiento.<br>• 🛠️ <strong>Implementación a Medida:</strong> Diagnóstico de procesos, carga inicial de productos y configuración personalizada para tu empresa.', true, true, '📲 Consultar Servicios de Agencia en WhatsApp ➔');
+        } else if (q.includes('como_funciona') || q.includes('como funciona') || q.includes('funcionamiento') || q.includes('que es')) {
+            appendMessage('bot', '<strong>⚡ ¿Cómo funciona Zyberia OS?</strong><br><br>Zyberia OS es el motor comercial de tu negocio. Conecta 3 pilares en una sola operación:<br><br>1. 📦 <strong>Sistema de Gestión:</strong> Manejás inventario, stock, ventas (POS), compras, proveedores, clientes y caja desde PC o celular.<br>2. 🤖 <strong>Agencia IA:</strong> 8 agentes inteligentes (Juan, Valentina, Camila, Enzo, Lucas, Mateo, Roberto, Sofía) trabajan sobre tus datos reales para detectar productos inmovilizados, proteger márgenes y automatizar ofertas.<br>3. 💻 <strong>Catálogo Web & WhatsApp:</strong> Tu catálogo online se actualiza solo en tiempo real con tu stock y vendés directo por WhatsApp.', true, true, '📲 Ver una Demo Guiada por WhatsApp ➔');
+        } else if (q.includes('precios_planes') || q.includes('precio') || q.includes('plan') || q.includes('costo') || q.includes('cuanto cuesta') || q.includes('valor')) {
+            appendMessage('bot', '<strong>💰 Planes y Propuesta Comercial:</strong><br><br>Zyberia ofrece soluciones integrales adaptadas a tu empresa:<br><br>• 🟢 <strong>Plan Control:</strong> Orden operativo total. Gestión de productos, stock, ventas (POS), caja y catálogo web público.<br>• 🔵 <strong>Plan Comprensión:</strong> Control + Reportes financieros, margen ciego, análisis de rentabilidad y alertas de sobrestock.<br>• 🟡 <strong>Plan Crecimiento:</strong> Ecosistema completo con los 8 Agentes IA trabajando 24/7 sobre tu negocio + Servicios de Agencia y comunicación comercial.<br><br>¿Te gustaría recibir una cotización a medida para tu empresa?', true, true, '📲 Solicitar Cotización Personalizada ➔');
+        } else if (q.includes('producto') || q.includes('stock') || q.includes('inventario') || q.includes('código') || q.includes('escaner') || q.includes('factura')) {
+            appendMessage('bot', '<strong>🔍 Gestión Inteligente de Productos:</strong><br><br>• 📱 <strong>Carga desde Celular:</strong> Sacás una foto al producto o factura, definís margen y la IA se encarga de cargarlo.<br>• 📷 <strong>Lector de Código de Barras:</strong> Usás la cámara para buscar productos y actualizar stock en segundos.<br>• 🏷️ <strong>Aumento Masivo de Precios:</strong> Cambian los costos del proveedor y aplicás aumentos porcentuales en 1-clic a toda la categoría.<br>• 🧠 <strong>Agente Juan:</strong> Supervisa productos inmovilizados para que no tengas capital parado.', true, true);
+        } else if (q.includes('agente') || q.includes('ia') || q.includes('equipo') || q.includes('quien')) {
+            appendMessage('bot', '<strong>🤖 Los 8 Agentes Especializados de Zyberia OS:</strong><br><br>• 🧠 <strong>Juan:</strong> Inteligencia de Inventario & Rotación<br>• 📊 <strong>Valentina:</strong> CFO Digital & Margen Financiero<br>• 📱 <strong>Camila:</strong> Marketing & Promociones<br>• 🎨 <strong>Enzo:</strong> Dirección de Arte & Flyers HD<br>• 💼 <strong>Lucas:</strong> Seguimiento de Presupuestos<br>• 💬 <strong>Mateo:</strong> WhatsApp Commercial Agent (¡Yo!)<br>• 📦 <strong>Roberto:</strong> Compras & Proveedores<br>• 🎯 <strong>Sofía:</strong> Leads & Calificación de Prospectos', true, true);
+        } else {
+            appendMessage('bot', '<strong>Zyberia — Comunicación + Tecnología + IA.</strong><br><br>Te asesoramos tanto en soluciones de software (Zyberia OS) como en servicios de agencia (Diseño, Branding, Marketing e Implementación).<br><br>¿Querés hablar con un especialista para tu negocio?', true, true, '📲 Chatear por WhatsApp Real ➔');
+        }
+    };
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = input ? input.value.trim() : '';
+            if (!text) return;
+            appendMessage('user', text);
+            if (input) input.value = '';
+            setTimeout(() => {
+                processBotReply(text);
+            }, 400);
+        });
+    }
+
+    if (messagesContainer) {
+        messagesContainer.addEventListener('click', (e) => {
+            const btn = e.target.closest('.wa-pill-btn');
+            if (btn) {
+                const query = btn.getAttribute('data-query');
+                const label = btn.textContent;
+                appendMessage('user', label);
+                setTimeout(() => {
+                    processBotReply(query);
+                }, 300);
+            }
+        });
+    }
+});
