@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,26 +17,26 @@
 </head>
 <body>
 
-    <!-- NAVIGATION BAR -->
+        <!-- NAVIGATION BAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo" style="text-decoration: none; line-height: 1;">
+            <a href="index.html" class="nav-logo" style="text-decoration: none; line-height: 1;">
                 <span class="logo-zyberia">ZYBERIA</span>
-                <span style="display: block; font-size: 0.6rem; font-weight: 700; color: var(--color-yellow); letter-spacing: 1.5px; margin-top: 2px;">OS</span>
+                <span style="display: block; font-size: 0.6rem; font-weight: 700; color: var(--color-yellow); letter-spacing: 1.5px; margin-top: 2px;">COMUNICACIÃ“N + TECNOLOGÃA + IA</span>
             </a>
             
             <ul class="nav-links" id="nav-menu">
-                <li><a href="zyberia-os.html" style="color: var(--color-yellow); font-weight: 700;">Zyberia OS</a></li>
-                <li><a href="#problema">El Problema</a></li>
-                <li><a href="#como-funciona">Cómo Funciona</a></li>
-                <li><a href="#agentes">Agentes IA</a></li>
-                <li><a href="#implementacion">Implementación</a></li>
-                <li><a href="#rubros">Rubros</a></li>
-                <li><a href="#casos">Casos</a></li>
-                <li><a href="#contacto" class="nav-cta">Hablemos</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="zyberia-os.html" >Zyberia OS</a></li>
+                <li><a href="servicios.html" >Servicios</a></li>
+                <li><a href="quienes-somos.html" >QuiÃ©nes Somos</a></li>
+                <li><a href="contacto.html" >Contacto</a></li>
+                <li style="margin-left: 10px;">
+                    <a href="contacto.html" class="nav-cta" style="background: var(--color-yellow); color: #111; font-weight: 800; border: none; padding: 10px 20px; border-radius: 50px;">Hablemos</a>
+                </li>
             </ul>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+            <button class="nav-toggle" id="nav-toggle" aria-label="MenÃº">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -48,15 +48,24 @@
         <div class="container">
             <div class="grid-2col text-left-media-right reveal" style="align-items: center;">
                 <div class="col-text">
-                    <div class="hero-badge">SISTEMA OPERATIVO COMERCIAL</div>
+                    <div class="hero-badge" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">ZYBERIA | AGENCIA & TECNOLOGÍA</div>
                     <h1 class="interactive-text" style="font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1.1;">
-                        Sistema de Gestión +<br>Agencia IA +<br><span class="text-yellow">Catálogo Web.</span>
+                        Comunicación +<br>Tecnología +<br><span class="text-yellow">IA.</span>
                     </h1>
                     <p class="section-desc text-left text-white" style="margin-top: 20px;">
-                        Gestión, inteligencia y presencia comercial conectadas en una sola plataforma. El sistema operativo comercial de tu negocio.
+                        Desarrollamos sistemas, inteligencia artificial, diseño y experiencias digitales para escalar tu empresa.
                     </p>
-                    <div class="hero-actions" style="margin-top: 30px;">
-                        <a href="#contacto" class="btn btn-gold btn-lg">Hablemos de mi negocio ➔</a>
+                    
+                    <div style="margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(10px);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <span style="background: var(--color-yellow); color: #000; font-size: 0.7rem; font-weight: 800; padding: 4px 8px; border-radius: 4px;">PRODUCTO DESTACADO</span>
+                        </div>
+                        <h3 style="color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 5px;">Zyberia OS</h3>
+                        <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.4;">Sistema de Gestión + Agencia IA + Catálogo Web conectados en una sola operación.</p>
+                        <div class="hero-actions" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <a href="zyberia-os.html" class="btn btn-gold">CONOCÉ ZYBERIA OS ➔</a>
+                            <a href="contacto.html" class="btn" style="background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 12px 24px;">HABLEMOS DE TU NEGOCIO ➔</a>
+                        </div>
                     </div>
                 </div>
 
@@ -64,6 +73,36 @@
                     <div class="dashboard-laptop-mockup">
                         <img src="assets/zyberia_dashboard_showcase_1786050960831.png" alt="Interface real de Zyberia OS" class="laptop-img" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- QUIÉNES SOMOS / ORIGEN -->
+    <section id="quienes-somos" class="section alt-bg">
+        <div class="container">
+            <div class="grid-2col text-left-media-right reveal">
+                <div class="col-text" style="text-align: left;">
+                    <div class="section-badge" style="background: rgba(0,0,0,0.05); color: #000; border-color: rgba(0,0,0,0.1);">NUESTRO ORIGEN</div>
+                    <h2 class="section-title text-left" style="margin-bottom: 10px;">De Macintosh a la <br><span class="text-yellow">inteligencia artificial</span></h2>
+                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #666; margin-bottom: 30px;">No empezamos con la IA. La IA es el siguiente capítulo.</h3>
+                    
+                    <div style="font-size: 1.05rem; color: #444; line-height: 1.7; display: flex; flex-direction: column; gap: 18px;">
+                        <p>Para nosotros, la combinación de comunicación y tecnología no es una estrategia de marketing reciente; es un camino de evolución real que comenzó hace más de veinte años.</p>
+                        
+                        <!-- Línea de tiempo visual compacta -->
+                        <div style="background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 20px 24px; margin: 10px 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+                            <div style="display: flex; gap: 15px; align-items: flex-start;"><strong style="color: #b38a00; min-width: 50px;">2002</strong> <span style="color: #333;">Composición gráfica y diseño digital en Macintosh.</span></div>
+                            <div style="display: flex; gap: 15px; align-items: flex-start;"><strong style="color: #b38a00; min-width: 50px;">2012</strong> <span style="color: #333;">Modelado 3D (Cinema 4D), secuencias e interacción web en Flash.</span></div>
+                            <div style="display: flex; gap: 15px; align-items: flex-start;"><strong style="color: #b38a00; min-width: 50px;">2014</strong> <span style="color: #333;">Experiencias inmersivas y galerías panorámicas 360°.</span></div>
+                            <div style="display: flex; gap: 15px; align-items: flex-start;"><strong style="color: #b38a00; min-width: 50px;">Hoy</strong> <span style="color: #333;">Arquitectura web moderna, automatizaciones e Inteligencia Artificial.</span></div>
+                            <div style="display: flex; gap: 15px; align-items: flex-start;"><strong style="color: #10b981; min-width: 50px;">Ahora</strong> <span style="color: #111; font-weight: bold;">Zyberia OS: el sistema operativo comercial conectado.</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-media">
+                    <img src="assets/branding.png" style="border-radius: 20px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" alt="Evolución tecnológica Zyberia">
                 </div>
             </div>
         </div>
@@ -84,14 +123,14 @@
                     </p>
                 </div>
                 <div class="col-media" style="display: flex; flex-direction: column; gap: 15px;">
-                    <div style="background: rgba(255,0,0,0.1); border: 1px solid rgba(255,0,0,0.2); padding: 20px; border-radius: 12px;">
-                        <strong style="color: #ff4444;">WhatsApp</strong> <span style="color: #ccc;">Consultas manuales sin saber el stock real.</span>
+                    <div style="background: rgba(255,0,0,0.05); border: 1px solid rgba(255,0,0,0.1); padding: 20px; border-radius: 12px;">
+                        <strong style="color: #e60000;">WhatsApp</strong> <span style="color: #333;">Consultas manuales sin saber el stock real.</span>
                     </div>
                     <div style="background: rgba(255,199,0,0.1); border: 1px solid rgba(255,199,0,0.2); padding: 20px; border-radius: 12px;">
-                        <strong style="color: #ffc700;">Precios</strong> <span style="color: #ccc;">Actualizados en Excel pero no en mostrador ni en la web.</span>
+                        <strong style="color: #b38a00;">Precios</strong> <span style="color: #333;">Actualizados en Excel pero no en mostrador ni en la web.</span>
                     </div>
-                    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 20px; border-radius: 12px;">
-                        <strong style="color: #fff;">Ventas</strong> <span style="color: #ccc;">Registradas pero desconectadas del costo real de reposición.</span>
+                    <div style="background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.08); padding: 20px; border-radius: 12px;">
+                        <strong style="color: #111;">Ventas</strong> <span style="color: #333;">Registradas pero desconectadas del costo real de reposición.</span>
                     </div>
                 </div>
             </div>
@@ -101,7 +140,7 @@
     <!-- UNA SOLA INFORMACIÓN (DIFERENCIAL) -->
     <section id="diferencial" class="section text-center" style="background: #111;">
         <div class="container reveal">
-            <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 20px;">
+            <h2 class="section-title text-white" style="font-size: 2.5rem; margin-bottom: 20px;">
                 No es solamente gestión.<br>
                 No es solamente IA.<br>
                 No es solamente una tienda online.
@@ -160,52 +199,52 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 50px; text-align: left;">
                 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Juan</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Inventario & Operaciones</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Provee información sobre stock, SKU y asistencia logística interna.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Juan</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Inventario & Operaciones</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Provee información sobre stock, SKU y asistencia logística interna.</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Valentina</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Finanzas & Rentabilidad</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Estratega financiera para análisis de márgenes y flujos.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Valentina</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Finanzas & Rentabilidad</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Estratega financiera para análisis de márgenes y flujos.</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Mateo</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Canal comercial WhatsApp</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Atención, asesoramiento y captura de oportunidades vía chat.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Mateo</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Canal comercial WhatsApp</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Atención, asesoramiento y captura de oportunidades vía chat.</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Lucas</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Comercial & Crecimiento</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Inteligencia competitiva y estrategia de crecimiento.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Lucas</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Comercial & Crecimiento</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Inteligencia competitiva y estrategia de crecimiento.</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Camila</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Marketing & Copywriting</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Creación de contenidos, textos persuasivos y estrategias digitales.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Camila</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Marketing & Copywriting</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Creación de contenidos, textos persuasivos y estrategias digitales.</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Enzo</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Diseño Visual</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Generación de flyers, banners y estética comercial.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Enzo</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Diseño Visual</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Generación de flyers, banners y estética comercial.</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Roberto</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Compras & Abastecimiento</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Interacción con proveedores y sugerencias de reposición.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Roberto</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Compras & Abastecimiento</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Interacción con proveedores y sugerencias de reposición.</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--color-yellow); display: block; font-size: 1.2rem; margin-bottom: 5px;">Sofía</strong>
-                    <span style="color: #fff; font-weight: bold; font-size: 0.9rem;">Leads & Captura</span>
-                    <p style="color: #888; font-size: 0.85rem; margin-top: 10px;">Calificación inicial y gestión de prospectos.</p>
+                <div style="background: rgba(0,0,0,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 5px;">Sofía</strong>
+                    <span style="color: #222; font-weight: bold; font-size: 0.9rem;">Leads & Captura</span>
+                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px;">Calificación inicial y gestión de prospectos.</p>
                 </div>
 
             </div>
@@ -241,8 +280,8 @@
         <div class="container reveal">
             <div class="text-center" style="margin-bottom: 60px;">
                 <div class="section-badge" style="margin: 0 auto 20px;">IMPLEMENTACIÓN DONE-FOR-YOU</div>
-                <h2 class="section-title">Vos traés tu negocio.<br>Nosotros hacemos la implementación.</h2>
-                <p class="section-desc centered">No te dejamos solo con un manual. Nuestro equipo se encarga de migrar tu comercio al sistema para que vos solo te enfoques en operar.</p>
+                <h2 class="section-title text-white">Vos traés tu negocio.<br>Nosotros hacemos la implementación.</h2>
+                <p class="section-desc centered text-white" style="color: #ccc !important;">No te dejamos solo con un manual. Nuestro equipo se encarga de migrar tu comercio al sistema para que vos solo te enfoques en operar.</p>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
@@ -299,53 +338,37 @@
         <div class="container reveal">
             <h2 class="section-title">¿En qué negocios funciona especialmente bien?</h2>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px;">
-                <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #fff;">Ferreterías</span>
-                <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #fff;">Repuestos</span>
-                <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #fff;">Corralones</span>
-                <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #fff;">Distribuidoras</span>
-                <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #fff;">Comercios con amplio catálogo</span>
+                <span style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #111;">Ferreterías</span>
+                <span style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #111;">Repuestos</span>
+                <span style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #111;">Corralones</span>
+                <span style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #111;">Distribuidoras</span>
+                <span style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 12px 25px; border-radius: 50px; font-weight: bold; color: #111;">Comercios con amplio catálogo</span>
             </div>
         </div>
     </section>
 
+    
     <!-- CASOS REALES -->
     <section id="casos" class="section service-showcase-section">
         <div class="container">
             <div class="text-center reveal" style="margin-bottom: 80px;">
-                <span class="section-badge" style="margin-inline: auto; margin-bottom: 15px;">VALIDACIÓN EN TERRENO</span>
-                <h2 class="section-title">Nuestros clientes operan y crecen.</h2>
+                <span class="section-badge" style="margin-inline: auto; margin-bottom: 15px; background: rgba(0,0,0,0.05); color: #000; border-color: rgba(0,0,0,0.1);">MÉTODO ZYBERIA</span>
+                <h2 class="section-title">Evolución en terreno</h2>
+                <p class="section-desc" style="margin: 0 auto; max-width: 600px;">Tres proyectos reales que demuestran nuestra evolución: de construir marcas a transformar procesos enteros.</p>
             </div>
 
-            <!-- FERRETERÍA PRO -->
-            <div class="grid-2col text-left-media-right reveal" style="align-items: center; margin-bottom: 80px; gap: 50px;">
+            <!-- CASO 01: GRAFINOR -->
+            <div class="grid-2col text-left-media-right reveal" style="align-items: center; margin-bottom: 120px; gap: 50px;">
                 <div class="col-text">
-                    <h2 class="text-left" style="font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 15px;">Ferretería Pro</h2>
-                    <p style="color: #bbb; line-height: 1.6;"><strong>El Desafío:</strong> Descontrol de costos por inflación, stock desarticulado y carga manual de facturas en papel.</p>
-                    <p style="color: #bbb; line-height: 1.6;"><strong>La Solución:</strong> Implementación de Zyberia OS conectando inventario y punto de venta. Reconocimiento de facturas de proveedores con IA para actualización instantánea de costos.</p>
-                </div>
-                <div class="col-media">
-                    <img src="assets/zyberia_dashboard_showcase_1786050960831.png" style="border-radius: 12px; width: 100%;" alt="Ferretería Pro">
-                </div>
-            </div>
-
-            <!-- ACOSTA MOTO -->
-            <div class="grid-2col mobile-reverse reveal" style="align-items: center; margin-bottom: 80px; gap: 50px;">
-                <div class="col-media">
-                    <img src="assets/branding.png" style="border-radius: 12px; width: 100%; opacity: 0.8;" alt="Acosta Moto">
-                </div>
-                <div class="col-text">
-                    <h2 class="text-left" style="font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 15px;">Acosta Moto</h2>
-                    <p style="color: #bbb; line-height: 1.6;"><strong>El Desafío:</strong> Trayectoria técnica de 30 años pero nula captación digital y consultas dispersas.</p>
-                    <p style="color: #bbb; line-height: 1.6;"><strong>La Solución:</strong> Rediseño de marca, producción audiovisual técnica y desarrollo de páginas web ultrarrápidas con arquitectura SEO local. Recepción automatizada de clientes de todo el norte.</p>
-                </div>
-            </div>
-
-            <!-- GRAFINOR -->
-            <div class="grid-2col text-left-media-right reveal" style="align-items: center; margin-bottom: 80px; gap: 50px;">
-                <div class="col-text">
-                    <h2 class="text-left" style="font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 15px;">Grafinor</h2>
-                    <p style="color: #bbb; line-height: 1.6;"><strong>El Desafío:</strong> Identidad corporativa desactualizada e incoherente con su escala industrial.</p>
-                    <p style="color: #bbb; line-height: 1.6;"><strong>La Solución:</strong> Rediseño integral de marca y sistema visual normado que mantiene su vigencia y estatus a través de los años.</p>
+                    <span class="service-badge" style="background: rgba(255,199,0,0.1); color: #b38a00; border: 1px solid rgba(255,199,0,0.3); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 15px;">01 — COMUNICAR (MARCA)</span>
+                    <h2 class="text-left" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 15px; line-height: 1.15;">Grafinor: <span class="text-yellow">una identidad que sigue vigente.</span></h2>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; font-size: 0.95rem; line-height: 1.5; color: #444;">
+                        <p><strong style="color: #111;">• Problema:</strong> Identidad corporativa y presencia digital desactualizadas e incoherentes con su escala real.</p>
+                        <p><strong style="color: #111;">• Intervención:</strong> Rediseño integral de marca, sistema visual normado y desarrollo de plataforma institucional.</p>
+                        <p><strong style="color: #111;">• Tecnología:</strong> Diseño digital vectorial, maquetación modular HTML5/CSS3 y optimización de carga.</p>
+                        <p><strong style="color: #10b981;">• Resultado:</strong> Una identidad y experiencia que conservan su vigencia estética y funcional tras años en producción sin necesidad de rediseño.</p>
+                    </div>
                 </div>
                 <div class="col-media">
                     <div style="background: #111; border-radius: 20px; padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
@@ -355,13 +378,42 @@
                 </div>
             </div>
 
+            <!-- CASO 02: ACOSTA -->
+            <div class="grid-2col media-left-text-right mobile-reverse reveal" style="align-items: center; margin-bottom: 120px; gap: 50px;">
+                <div class="col-media">
+                    <div style="background: #111; border-radius: 20px; padding: 40px; text-align: center;"><span style="font-size: 4rem; display: block; margin-bottom: 20px;">??</span><h4 style="color: #fff; font-size: 1.2rem; margin: 0;">Arquitectura & Conversi�n</h4></div>
+                </div>
+                <div class="col-text">
+                    <span class="service-badge" style="background: rgba(6,182,212,0.1); color: #06b6d4; border: 1px solid rgba(6,182,212,0.3); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 15px;">02 — CRECER (CONVERSIÓN)</span>
+                    <h2 class="text-left" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 15px; line-height: 1.15;">Acosta Motomecánica: <span class="text-yellow">Estructura web y SEO.</span></h2>
+                    <p class="text-left" style="color: #444; line-height: 1.6; margin-bottom: 15px;">Desarrollamos el sitio web y la arquitectura SEO local para Acosta Motomecánica, un taller de alineación y enderezado de chasis en San Miguel de Tucumán.</p>
+                    <p class="text-left" style="color: #444; line-height: 1.6; margin-bottom: 30px;">
+                        Diseñamos una estructura semántica específica para captar la intención de búsqueda real de los usuarios en la región y optimizamos la interfaz móvil bajo nuestro playbook de conversión para facilitar el agendamiento directo de turnos por WhatsApp.
+                    </p>
+                    <a href="https://acostamotomecanica.com.ar" target="_blank" class="btn btn-gold">Ver Sitio Web de Acosta ➔</a>
+                </div>
+            </div>
+
+            <!-- CASO 03: FERRETERÍA -->
+            <div class="grid-2col text-left-media-right reveal" style="align-items: center; margin-bottom: 120px; gap: 50px;">
+                <div class="col-text">
+                    <span class="service-badge" style="background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.3); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 15px;">03 — OPERAR (SISTEMA + IA)</span>
+                    <h2 class="text-left" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 15px; line-height: 1.15;">Ferretería Pro: <span class="text-yellow">trabajar de otra manera.</span></h2>
+                    <p class="text-left" style="color: #444; line-height: 1.6; margin-bottom: 15px;"><strong>El Desafío:</strong> Descontrol de costos por inflación, stock desarticulado y carga manual de facturas en papel.</p>
+                    <p class="text-left" style="color: #444; line-height: 1.6; margin-bottom: 30px;"><strong>La Solución:</strong> Implementación de Zyberia OS conectando inventario y punto de venta. Reconocimiento de facturas de proveedores con IA para actualización instantánea de costos.</p>
+                </div>
+                <div class="col-media">
+                    <img src="assets/zyberia_dashboard_showcase_1786050960831.png" style="border-radius: 12px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" alt="Ferretería Pro">
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- CONTACTO Y CIERRE -->
-    <footer id="contacto" class="footer-section">
+    <footer id="contacto" class="footer-section" style="background: #111;">
         <div class="container text-center hero-closing reveal" style="margin-bottom: 60px;">
-            <div class="section-title" style="font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; font-weight: 700; text-transform: uppercase;">
+            <div class="section-title text-white" style="font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; font-weight: 700; text-transform: uppercase;">
                 Llevá tu operación comercial <br>
                 <span class="text-gold">al siguiente nivel.</span>
             </div>
@@ -375,7 +427,7 @@
             </div>
             
             <div class="footer-form-box">
-                <h3 id="form-intent-title">Hablemos de mi negocio</h3>
+                <h3 id="form-intent-title" class="text-white">Hablemos de mi negocio</h3>
                 <form id="contact-form" class="manifesto-form">
                     <input type="text" placeholder="Nombre completo" required>
                     <input type="text" placeholder="Empresa / Negocio" required>
@@ -476,3 +528,5 @@
 
 </body>
 </html>
+
+
