@@ -1,4 +1,29 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
+  // 0. Mobile Navigation Toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    // Close on link click
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+
   console.log('🚀 ZYBERIA Master Tech Web Initialized with Particles Canvas Engine');
 
   // 1. Reveal Elements on Scroll

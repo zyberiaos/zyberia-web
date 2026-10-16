@@ -61,7 +61,7 @@
     <section id="hero" class="hero-dark" style="min-height: 65vh; padding-top: 155px; padding-bottom: 75px;">
         <canvas id="particles-bg"></canvas>
         <div class="container text-center" style="position: relative; z-index: 10;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,215,0,0.12); color: var(--color-yellow); border: 1px solid rgba(255,215,0,0.3); padding: 7px 18px; border-radius: 50px; font-size: 0.76rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 22px;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; text-align: center; max-width: 100%; gap: 8px; background: rgba(255,215,0,0.12); color: var(--color-yellow); border: 1px solid rgba(255,215,0,0.3); padding: 8px 16px; border-radius: 50px; font-size: clamp(0.64rem, 2.2vw, 0.76rem); font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 22px;">
                 <span>COMUNICACIÓN ESTRATÉGICA</span> <span>+</span> <span>TECNOLOGÍA</span> <span>+</span> <span>INTELIGENCIA ARTIFICIAL</span>
             </div>
             
@@ -248,102 +248,130 @@
             </div>
 
             <!-- JUAN: agente central -->
-            <div class="agent-feature">
-                <div class="agent-video" data-agent-video>
-                        <video preload="none" playsinline poster="videos/posters/poster-juan.jpg" aria-label="Presentación de Juan, Gerente Operativo Digital">
-                            <source src="videos/Juan.mp4" type="video/mp4">
-                        </video>
-                        <button type="button" class="agent-video-play" aria-label="Reproducir: Presentación de Juan, Gerente Operativo Digital"><span class="play-icon" aria-hidden="true">&#9654;</span><small>Ver presentación</small></button>
+            <div class="agent-card-unified agent-feature-unified" style="margin-bottom: 45px; text-align: left;">
+                <div style="display: flex; flex-wrap: wrap; align-items: stretch;">
+                    <div style="flex: 1 1 320px; max-width: 100%;">
+                        <div class="agent-video" data-agent-video style="width: 100% !important; max-width: 100% !important; height: 100%; min-height: 380px; margin: 0; border: none; border-radius: 0; aspect-ratio: auto;">
+                            <video preload="none" playsinline poster="videos/posters/poster-juan.jpg" aria-label="Presentación de Juan, Gerente Operativo Digital" style="width: 100%; height: 100%; object-fit: cover;">
+                                <source src="videos/Juan.mp4" type="video/mp4">
+                            </video>
+                            <button type="button" class="agent-video-play" aria-label="Reproducir: Presentación de Juan, Gerente Operativo Digital"><span class="play-icon" aria-hidden="true">&#9654;</span><small>Ver presentación</small></button>
+                        </div>
                     </div>
-                <div>
-                    <span style="display: inline-block; background: rgba(248,231,28,0.25); color: #7a5f00; font-size: 0.7rem; font-weight: 800; letter-spacing: 1px; padding: 5px 12px; border-radius: 30px; margin-bottom: 12px;">AGENTE CENTRAL</span>
-                    <strong style="color: #b38a00; display: block; font-size: 1.8rem; margin-bottom: 4px;">Juan</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 1rem;">Gerente Operativo Digital</span>
-                    <p style="color: #555; font-size: 0.98rem; margin-top: 12px; line-height: 1.6;">Es tu principal interlocutor: recibe tus pedidos, analiza la situación, consulta la información del negocio y puede delegar tareas en los especialistas correspondientes.</p>
-                    <p style="color: #222; font-size: 0.85rem; font-weight: 700; margin-top: 14px;">Dueño del negocio &rarr; Juan &rarr; Equipo de especialistas</p>
+                    <div class="agent-card-body" style="flex: 1 1 360px; padding: 35px 30px; display: flex; flex-direction: column; justify-content: center;">
+                        <div>
+                            <span style="display: inline-block; background: rgba(248,231,28,0.25); color: #7a5f00; font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; padding: 5px 14px; border-radius: 30px; margin-bottom: 14px;">AGENTE CENTRAL</span>
+                            <strong style="color: #b38a00; display: block; font-size: 2.1rem; margin-bottom: 4px; line-height: 1.1;">Juan</strong>
+                            <span style="color: #111; font-weight: 800; font-size: 1.05rem;">Gerente Operativo Digital</span>
+                            <p style="color: #555; font-size: 0.98rem; margin-top: 14px; line-height: 1.6;">Es tu principal interlocutor: recibe tus pedidos, analiza la situación, consulta la información del negocio y puede delegar tareas en los especialistas correspondientes.</p>
+                            <div style="margin-top: 20px; padding: 12px 16px; background: rgba(0,0,0,0.03); border-radius: 10px; border-left: 3px solid var(--color-yellow); color: #222; font-size: 0.88rem; font-weight: 700;">
+                                Dueño del negocio &rarr; Juan &rarr; Equipo de especialistas
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <p style="color: #7a5f00; font-size: 0.78rem; font-weight: 800; letter-spacing: 1.5px; margin: 0 0 20px 0;">EL EQUIPO DE ESPECIALISTAS QUE COORDINA JUAN</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; text-align: left;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; text-align: left;">
 
                 <!-- MATEO -->
-                <div style="background: rgba(0,0,0,0.03); padding: 22px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
-                    <div class="agent-video" data-agent-video style="max-width: 200px;">
+                <div class="agent-card-unified">
+                    <div class="agent-video" data-agent-video>
                         <video preload="none" playsinline poster="videos/posters/poster-mateo.jpg" aria-label="Presentación de Mateo, Ventas, Catálogo e Inventario">
                             <source src="videos/Mateo.mp4" type="video/mp4">
                         </video>
                         <button type="button" class="agent-video-play" aria-label="Reproducir: Presentación de Mateo, Ventas, Catálogo e Inventario"><span class="play-icon" aria-hidden="true">&#9654;</span><small>Ver presentación</small></button>
                     </div>
-                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 4px;">Mateo</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Ventas, Catálogo & Inventario</span>
-                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5;">Orienta consultas sobre productos, catálogo, disponibilidad y precios, y atiende la relación comercial con el cliente, incluido WhatsApp.</p>
+                    <div class="agent-card-body">
+                        <strong style="color: #b38a00; display: block; font-size: 1.25rem; margin-bottom: 4px;">Mateo</strong>
+                        <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Ventas, Catálogo & Inventario</span>
+                        <p style="color: #555; font-size: 0.88rem; margin-top: 10px; line-height: 1.5;">Orienta consultas sobre productos, catálogo, disponibilidad y precios, y atiende la relación comercial con el cliente, incluido WhatsApp.</p>
+                    </div>
                 </div>
 
                 <!-- ROBERTO -->
-                <div style="background: rgba(0,0,0,0.03); padding: 22px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
-                    <div class="agent-video" data-agent-video style="max-width: 200px;">
+                <div class="agent-card-unified">
+                    <div class="agent-video" data-agent-video>
                         <video preload="none" playsinline poster="videos/posters/poster-roberto.jpg" aria-label="Presentación de Roberto, Compras y Abastecimiento">
                             <source src="videos/Roberto.mp4" type="video/mp4">
                         </video>
                         <button type="button" class="agent-video-play" aria-label="Reproducir: Presentación de Roberto, Compras y Abastecimiento"><span class="play-icon" aria-hidden="true">&#9654;</span><small>Ver presentación</small></button>
                     </div>
-                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 4px;">Roberto</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Compras & Abastecimiento</span>
-                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5;">Interpretación de facturas, análisis de costos de proveedores y sugerencias de reposición.</p>
+                    <div class="agent-card-body">
+                        <strong style="color: #b38a00; display: block; font-size: 1.25rem; margin-bottom: 4px;">Roberto</strong>
+                        <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Compras & Abastecimiento</span>
+                        <p style="color: #555; font-size: 0.88rem; margin-top: 10px; line-height: 1.5;">Interpretación de facturas, análisis de costos de proveedores y sugerencias de reposición.</p>
+                    </div>
                 </div>
 
                 <!-- VALENTINA -->
-                <div style="background: rgba(0,0,0,0.03); padding: 22px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
-                    <div class="agent-video" data-agent-video style="max-width: 200px;">
+                <div class="agent-card-unified">
+                    <div class="agent-video" data-agent-video>
                         <video preload="none" playsinline poster="videos/posters/poster-valentina.jpg" aria-label="Presentación de Valentina, CFO Digital">
                             <source src="videos/Valentina.mp4" type="video/mp4">
                         </video>
                         <button type="button" class="agent-video-play" aria-label="Reproducir: Presentación de Valentina, CFO Digital"><span class="play-icon" aria-hidden="true">&#9654;</span><small>Ver presentación</small></button>
                     </div>
-                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 4px;">Valentina</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 0.88rem;">CFO Digital & Finanzas</span>
-                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5;">Analiza ingresos, costos, gastos y rentabilidad del negocio para apoyar las decisiones financieras.</p>
+                    <div class="agent-card-body">
+                        <strong style="color: #b38a00; display: block; font-size: 1.25rem; margin-bottom: 4px;">Valentina</strong>
+                        <span style="color: #222; font-weight: bold; font-size: 0.88rem;">CFO Digital & Finanzas</span>
+                        <p style="color: #555; font-size: 0.88rem; margin-top: 10px; line-height: 1.5;">Analiza ingresos, costos, gastos y rentabilidad del negocio para apoyar las decisiones financieras.</p>
+                    </div>
                 </div>
 
                 <!-- LUCAS -->
-                <div style="background: rgba(0,0,0,0.03); padding: 22px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
-                    <div class="agent-video" data-agent-video style="max-width: 200px;">
+                <div class="agent-card-unified">
+                    <div class="agent-video" data-agent-video>
                         <video preload="metadata" playsinline aria-label="Presentación de Lucas, Comercial y Crecimiento">
                             <source src="videos/Lucas.mp4" type="video/mp4">
                         </video>
                         <button type="button" class="agent-video-play" aria-label="Reproducir: Presentación de Lucas, Comercial y Crecimiento"><span class="play-icon" aria-hidden="true">&#9654;</span><small>Ver presentación</small></button>
                     </div>
-                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 4px;">Lucas</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Comercial & Crecimiento</span>
-                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5;">Estrategia de ventas, adquisición de clientes y análisis de oportunidades de expansión comercial.</p>
+                    <div class="agent-card-body">
+                        <strong style="color: #b38a00; display: block; font-size: 1.25rem; margin-bottom: 4px;">Lucas</strong>
+                        <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Comercial & Crecimiento</span>
+                        <p style="color: #555; font-size: 0.88rem; margin-top: 10px; line-height: 1.5;">Estrategia de ventas, adquisición de clientes y análisis de oportunidades de expansión comercial.</p>
+                    </div>
                 </div>
 
                 <!-- SOFÍA -->
-                <div style="background: rgba(0,0,0,0.03); padding: 22px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
-                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 4px;">Sofía</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Leads</span>
-                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5;">Recepción, organización y clasificación inicial de prospectos y solicitudes comerciales entrantes.</p>
+                <div class="agent-card-unified">
+                    <div style="width: 100%; aspect-ratio: 9/8; background: linear-gradient(135deg, rgba(248,231,28,0.12), rgba(0,0,0,0.04)); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <span style="font-size: 3.2rem;">🎯</span>
+                    </div>
+                    <div class="agent-card-body">
+                        <strong style="color: #b38a00; display: block; font-size: 1.25rem; margin-bottom: 4px;">Sofía</strong>
+                        <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Leads & Calificación</span>
+                        <p style="color: #555; font-size: 0.88rem; margin-top: 10px; line-height: 1.5;">Recepción, organización y clasificación inicial de prospectos y solicitudes comerciales entrantes.</p>
+                    </div>
                 </div>
 
                 <!-- CAMILA -->
-                <div style="background: rgba(0,0,0,0.03); padding: 22px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
-                    <div class="agent-video" data-agent-video style="max-width: 200px;">
+                <div class="agent-card-unified">
+                    <div class="agent-video" data-agent-video>
                         <video preload="metadata" playsinline aria-label="Presentación de Camila, Marketing y Copywriting">
                             <source src="videos/Camila.mp4" type="video/mp4">
                         </video>
                         <button type="button" class="agent-video-play" aria-label="Reproducir: Presentación de Camila, Marketing y Copywriting"><span class="play-icon" aria-hidden="true">&#9654;</span><small>Ver presentación</small></button>
                     </div>
-                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 4px;">Camila</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Marketing & Copywriting</span>
-                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5;">Redacción comercial, estrategia de contenidos publicitarios y mensajes atractivos de marca.</p>
+                    <div class="agent-card-body">
+                        <strong style="color: #b38a00; display: block; font-size: 1.25rem; margin-bottom: 4px;">Camila</strong>
+                        <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Marketing & Copywriting</span>
+                        <p style="color: #555; font-size: 0.88rem; margin-top: 10px; line-height: 1.5;">Redacción comercial, estrategia de contenidos publicitarios y mensajes atractivos de marca.</p>
+                    </div>
                 </div>
 
                 <!-- ENZO -->
-                <div style="background: rgba(0,0,0,0.03); padding: 22px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
-                    <strong style="color: #b38a00; display: block; font-size: 1.2rem; margin-bottom: 4px;">Enzo</strong>
-                    <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Arte & Diseño</span>
-                    <p style="color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5;">Piezas gráficas, flyers y recursos visuales: concepto de diseño y armado ágil de piezas promocionales.</p>
+                <div class="agent-card-unified">
+                    <div style="width: 100%; aspect-ratio: 9/8; background: linear-gradient(135deg, rgba(248,231,28,0.12), rgba(0,0,0,0.04)); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <span style="font-size: 3.2rem;">🎨</span>
+                    </div>
+                    <div class="agent-card-body">
+                        <strong style="color: #b38a00; display: block; font-size: 1.25rem; margin-bottom: 4px;">Enzo</strong>
+                        <span style="color: #222; font-weight: bold; font-size: 0.88rem;">Arte & Diseño</span>
+                        <p style="color: #555; font-size: 0.88rem; margin-top: 10px; line-height: 1.5;">Piezas gráficas, flyers y recursos visuales: concepto de diseño y armado ágil de piezas promocionales.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -581,13 +609,13 @@
 
     <!-- MATEO IA FLOATING WIDGET -->
     <div id="wa-widget-wrapper" style="position: fixed; bottom: 25px; right: 25px; z-index: 9999; font-family: 'Space Grotesk', sans-serif;">
-        <div id="wa-bot-trigger" style="background: #25D366; color: #111b21; padding: 12px 20px; border-radius: 30px; display: flex; align-items: center; gap: 10px; cursor: pointer; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: transform 0.2s, box-shadow 0.2s;">
+        <div id="wa-bot-trigger" aria-label="Abrir chat con Mateo IA" style="background: #25D366; color: #111b21; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45); transition: transform 0.2s, box-shadow 0.2s; position: relative;">
             <div style="position: relative; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                 </svg>
             </div>
-            <span style="font-weight: 700; font-size: 0.9rem; letter-spacing: 0.3px; white-space: nowrap;">Consultar a Mateo IA</span>
+            <span style="display: none;">Consultar a Mateo IA</span>
         </div>
 
         <div id="wa-bot-modal" style="display: none; width: 360px; max-width: 90vw; height: 500px; max-height: 80vh; background: #111b21; border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); overflow: hidden; flex-direction: column; position: absolute; bottom: 65px; right: 0; transition: all 0.3s ease;">

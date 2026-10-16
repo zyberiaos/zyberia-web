@@ -2086,8 +2086,89 @@ video.v-scrub {
   }
   .notifications-chaos-grid, .questions-grid, .demos-grid-5, .team-grid, .use-cases-grid-showcase, .plans-grid, .split-grid, .smart-ficha-grid, .radar-cards-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .nav-toggle { display: block; background: none; border: none; color: white; font-size: 1.5rem; }
+  /* Mobile Navigation Hamburger & Drawer */
+  .nav-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 8px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    z-index: 1001;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(14, 14, 14, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 20px 30px;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    z-index: 1000;
+  }
+  .nav-links.active {
+    display: flex !important;
+    animation: navSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .nav-links li {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+  }
+  .nav-links a {
+    display: block;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #eee;
+  }
+  .nav-links a.active,
+  .nav-links a:hover {
+    background: rgba(248, 231, 28, 0.12);
+    border-color: rgba(248, 231, 28, 0.4);
+    color: var(--color-yellow);
+  }
+  .nav-links .nav-cta {
+    display: block !important;
+    margin-top: 8px;
+    text-align: center;
+    padding: 14px 24px !important;
+  }
   .v-scroll-container { height: auto; }
   .v-sticky-wrapper { position: relative; top: 0; }
   .transformation-flow-grid { flex-direction: column; }
@@ -2932,4 +3013,89 @@ input:checked + .toggle-slider:before { transform: translateX(26px); }
         padding-bottom: 12px;
     }
     .equipo-card { flex: 0 0 78%; max-width: none; scroll-snap-align: start; }
+}
+
+
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- OVERFLOW AND VIEWPORT CONTROL --- */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .nav-container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .section, section {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+/* --- UNIFIED SINGLE CONTAINER FOR AGENTS --- */
+.agent-card-unified {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.agent-card-unified:hover {
+  transform: translateY(-3px);
+  border-color: rgba(248, 231, 28, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+.agent-card-unified .agent-video {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none !important;
+  aspect-ratio: 9 / 14;
+}
+.agent-card-unified .agent-card-body {
+  padding: 22px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* --- CIRCULAR FLOATING WHATSAPP BUTTON --- */
+#wa-bot-trigger,
+.wa-floating-btn {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45) !important;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
+}
+#wa-bot-trigger:hover,
+.wa-floating-btn:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.65) !important;
+}
+#wa-bot-trigger span:not(.wa-badge-pulse),
+#wa-bot-trigger > span:last-child {
+  display: none !important;
 }
