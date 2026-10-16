@@ -3205,3 +3205,32 @@ html, body {
     font-size: 0.95rem !important;
   }
 }
+
+
+/* Scrolltelling Video Scrubbing Global & Mobile Assurance */
+#scrolltelling {
+    height: 300vh !important;
+    position: relative !important;
+    background: #000 !important;
+    display: block !important;
+    overflow: visible !important;
+}
+#scrolltelling .v-sticky-wrapper {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100dvh !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #000 !important;
+    overflow: hidden !important;
+}
+#scrolltelling .v-scrub {
+    width: 100% !important;
+    height: 100dvh !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
