@@ -3099,3 +3099,37 @@ html, body {
 #wa-bot-trigger > span:last-child {
   display: none !important;
 }
+
+
+/* --- JUAN PRINCIPAL AGENT CARD STYLING --- */
+.juan-principal-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+@media (min-width: 900px) {
+  .juan-grid-wrapper {
+    min-height: 440px;
+    max-height: 490px;
+  }
+  .juan-media-col {
+    flex: 0 0 380px !important;
+    max-width: 380px !important;
+  }
+  .juan-media-col .agent-video {
+    height: 100% !important;
+    max-height: 100% !important;
+  }
+}
+@media (max-width: 899px) {
+  .juan-media-col {
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .juan-media-col .agent-video {
+    max-height: 420px !important;
+    aspect-ratio: 16 / 10;
+  }
+  .juan-content-col {
+    padding: 30px 24px !important;
+  }
+}
