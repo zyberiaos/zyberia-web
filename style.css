@@ -3164,18 +3164,25 @@ html, body {
   }
 }
 
-/* Fix 3: Bajar contenido del Hero en celular para que no quede pisado por la barra de menú fija */
-@media (max-width: 768px) {
+/* Fix 3: Margen perfecto entre badge y navbar en celular y escritorio */
+.hero-home-section,
+#hero {
+  padding-top: 145px;
+}
+@media (max-width: 992px) {
+  .navbar {
+    padding: 14px 0 !important;
+  }
   .hero-home-section,
   #hero {
-    padding-top: 180px !important;
+    padding-top: 110px !important;
     padding-bottom: 60px !important;
   }
 }
 @media (max-width: 480px) {
   .hero-home-section,
   #hero {
-    padding-top: 195px !important;
+    padding-top: 104px !important;
   }
 }
 
