@@ -281,22 +281,7 @@
     dot.addEventListener('click', () => setHeroStep(idx));
   });
 
-  // Hero Scroll Progress Listener
-  const heroSection = document.getElementById('hero');
-  if (heroSection) {
-    window.addEventListener('scroll', () => {
-      const heroRect = heroSection.getBoundingClientRect();
-      const heroHeight = heroSection.offsetHeight;
-      if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
-        const scrolled = Math.max(0, -heroRect.top);
-        const ratio = scrolled / (heroHeight - window.innerHeight || 1);
-        const mappedStep = Math.min(7, Math.floor(ratio * 8));
-        if (mappedStep !== currentHeroStep && mappedStep >= 0) {
-          setHeroStep(mappedStep);
-        }
-      }
-    });
-  }
+  // Hero Scroll Progress Listener (inactive on static hero)
 
   // 9. CHAT-FEED NOTIFICATION SCROLLTELLING SYNCRONIZER
   const chatFeedSection = document.getElementById('chat-feed');
@@ -538,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (q.includes('producto') || q.includes('stock') || q.includes('inventario') || q.includes('código') || q.includes('escaner') || q.includes('factura')) {
             appendMessage('bot', '<strong>🔍 Gestión Inteligente de Productos:</strong><br><br>• 📱 <strong>Carga desde Celular:</strong> Sacás una foto al producto o factura, definís margen y la IA se encarga de cargarlo.<br>• 📷 <strong>Lector de Código de Barras:</strong> Usás la cámara para buscar productos y actualizar stock en segundos.<br>• 🏷️ <strong>Aumento Masivo de Precios:</strong> Cambian los costos del proveedor y aplicás aumentos porcentuales en 1-clic a toda la categoría.<br>• 🧠 <strong>Agente Juan:</strong> Supervisa productos inmovilizados para que no tengas capital parado.', true, true);
         } else if (q.includes('agente') || q.includes('ia') || q.includes('equipo') || q.includes('quien')) {
-            appendMessage('bot', '<strong>🤖 Los 8 Agentes Especializados de Zyberia OS:</strong><br><br>• 🧠 <strong>Juan:</strong> Inteligencia de Inventario & Rotación<br>• 📊 <strong>Valentina:</strong> CFO Digital & Margen Financiero<br>• 📱 <strong>Camila:</strong> Marketing & Promociones<br>• 🎨 <strong>Enzo:</strong> Dirección de Arte & Flyers HD<br>• 💼 <strong>Lucas:</strong> Seguimiento de Presupuestos<br>• 💬 <strong>Mateo:</strong> WhatsApp Commercial Agent (¡Yo!)<br>• 📦 <strong>Roberto:</strong> Compras & Proveedores<br>• 🎯 <strong>Sofía:</strong> Leads & Calificación de Prospectos', true, true);
+            appendMessage('bot', '<strong>🤖 Los 8 Agentes Especializados de Zyberia OS:</strong><br><br>• 🧠 <strong>Juan:</strong> Gerente Operativo Digital (coordina al equipo)<br>• 📊 <strong>Valentina:</strong> CFO Digital & Margen Financiero<br>• 📱 <strong>Camila:</strong> Marketing & Copywriting<br>• 🎨 <strong>Enzo:</strong> Arte & Diseño (flyers y piezas gráficas)<br>• 💼 <strong>Lucas:</strong> Comercial & Crecimiento<br>• 💬 <strong>Mateo:</strong> Ventas, Catálogo & Inventario (¡Yo!)<br>• 📦 <strong>Roberto:</strong> Compras & Proveedores<br>• 🎯 <strong>Sofía:</strong> Leads & Calificación de Prospectos', true, true);
         } else {
             appendMessage('bot', '<strong>Zyberia — Comunicación + Tecnología + IA.</strong><br><br>Te asesoramos tanto en soluciones de software (Zyberia OS) como en servicios de agencia (Diseño, Branding, Marketing e Implementación).<br><br>¿Querés hablar con un especialista para tu negocio?', true, true, '📲 Chatear por WhatsApp Real ➔');
         }
@@ -570,4 +555,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+// Presentaciones en video de los empleados digitales: carga diferida (preload="none") y reproducción por click, con audio.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-agent-video]').forEach((box) => {
+    const video = box.querySelector('video');
+    const btn = box.querySelector('.agent-video-play');
+    if (!video || !btn) return;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-agent-video] video').forEach((v) => { if (v !== video) v.pause(); });
+      video.setAttribute('controls', '');
+      box.classList.add('is-playing');
+      video.play().catch(() => { box.classList.remove('is-playing'); video.removeAttribute('controls'); });
+    });
+    video.addEventListener('ended', () => {
+      video.currentTime = 0;
+      video.removeAttribute('controls');
+      box.classList.remove('is-playing');
+    });
+  });
 });
