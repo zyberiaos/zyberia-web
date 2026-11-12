@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -278,7 +278,17 @@
         <div class="container">
             
             <!-- VIDEO 1: Cargar Producto -->
-            <div class="grid-2col text-left-media-right reveal" style="align-items: center; gap: 60px; margin-bottom: 150px;">
+             <style>
+                 .pos-demo-layout { max-height: min(538px, calc(100vh - 190px)); }
+                 .pos-demo-layout .col-text { overflow: auto; }
+                 .pos-demo-layout .col-media { display: flex; align-items: center; justify-content: center; }
+                 @media (max-width: 768px) {
+                     .pos-demo-layout { max-height: none; }
+                     .pos-demo-layout .col-text { overflow: visible; }
+                     .pos-demo-layout .col-media { order: 2; }
+                 }
+             </style>
+            <div class="grid-2col text-left-media-right reveal pos-demo-layout" style="align-items: stretch; gap: 60px; margin-bottom: 150px; max-height: min(538px, calc(100vh - 190px));">
                 <div class="col-text">
                     <span class="section-badge" style="margin-bottom: 15px; border-color: rgba(6,182,212,0.3); color: #06b6d4;">DEMOSTRACIÓN 01</span>
                     <h2 class="section-title text-white" style="font-size: clamp(2rem, 4vw, 2.5rem);">Cargá productos desde tu celular.</h2>
@@ -288,12 +298,10 @@
                     </p>
                 </div>
                 <div class="col-media" style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(255,215,0,0.08) 0%, rgba(15,15,15,0.95) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px dashed rgba(255,215,0,0.3); border-radius: 12px; padding: 20px; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px; opacity: 0.8;">🎬</div>
-                        <div style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Demostración Visual en Video</div>
-                        <div style="color: #aaa; font-size: 0.75rem; margin-top: 4px;">Material audiovisual en producción — Disponible en demo en vivo</div>
-                    </div>
+                    <div style="position: relative; width: min(100%, 420px); aspect-ratio: 9 / 16; height: min(100%, 538px); max-height: 100%; margin: 0 auto;">
+                        <video controls preload="none" playsinline poster="videos/posters/poster-pos-movil.jpg" aria-label="Demostración del POS móvil: escaneo y venta desde un celular" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; background: #050505;" data-pos-demo>
+                            <source src="videos/demostraciones/Presentacion Juan POS.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -301,12 +309,10 @@
             <!-- VIDEO 2: Escanear Código -->
             <div class="grid-2col media-left-text-right reveal" style="align-items: center; gap: 60px; margin-bottom: 150px;">
                 <div class="col-media" style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(255,215,0,0.08) 0%, rgba(15,15,15,0.95) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px dashed rgba(255,215,0,0.3); border-radius: 12px; padding: 20px; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px; opacity: 0.8;">🎬</div>
-                        <div style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Demostración Visual en Video</div>
-                        <div style="color: #aaa; font-size: 0.75rem; margin-top: 4px;">Material audiovisual en producción — Disponible en demo en vivo</div>
-                    </div>
+                    <div style="position: relative; width: min(100%, 420px); aspect-ratio: 9 / 16; height: min(100%, 538px); max-height: 100%; margin: 0 auto;">
+                        <video controls preload="none" playsinline poster="videos/posters/poster-pos-movil.jpg" aria-label="Demostración del POS móvil: escaneo y venta desde un celular" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; background: #050505;" data-pos-demo>
+                            <source src="videos/demostraciones/Presentacion Juan POS.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
                 <div class="col-text">
@@ -319,7 +325,7 @@
             </div>
 
             <!-- VIDEO 3: Aumentos Masivos -->
-            <div class="grid-2col text-left-media-right reveal" style="align-items: center; gap: 60px; margin-bottom: 150px;">
+            <div class="grid-2col text-left-media-right reveal pos-demo-layout" style="align-items: stretch; gap: 60px; margin-bottom: 150px; max-height: min(538px, calc(100vh - 190px));">
                 <div class="col-text">
                     <span class="section-badge" style="margin-bottom: 15px; border-color: rgba(6,182,212,0.3); color: #06b6d4;">DEMOSTRACIÓN 03</span>
                     <h2 class="section-title text-white" style="font-size: clamp(2rem, 4vw, 2.5rem);">Actualizá cientos de precios de una vez.</h2>
@@ -328,12 +334,10 @@
                     </p>
                 </div>
                 <div class="col-media" style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(255,215,0,0.08) 0%, rgba(15,15,15,0.95) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px dashed rgba(255,215,0,0.3); border-radius: 12px; padding: 20px; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px; opacity: 0.8;">🎬</div>
-                        <div style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Demostración Visual en Video</div>
-                        <div style="color: #aaa; font-size: 0.75rem; margin-top: 4px;">Material audiovisual en producción — Disponible en demo en vivo</div>
-                    </div>
+                    <div style="position: relative; width: min(100%, 420px); aspect-ratio: 9 / 16; height: min(100%, 538px); max-height: 100%; margin: 0 auto;">
+                        <video controls preload="none" playsinline poster="videos/posters/poster-pos-movil.jpg" aria-label="Demostración del POS móvil: escaneo y venta desde un celular" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; background: #050505;" data-pos-demo>
+                            <source src="videos/demostraciones/Presentacion Juan POS.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -341,12 +345,10 @@
             <!-- VIDEO 4: Facturas + IA -->
             <div class="grid-2col media-left-text-right reveal" style="align-items: center; gap: 60px;">
                 <div class="col-media" style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(255,215,0,0.08) 0%, rgba(15,15,15,0.95) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px dashed rgba(255,215,0,0.3); border-radius: 12px; padding: 20px; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px; opacity: 0.8;">🎬</div>
-                        <div style="color: var(--color-yellow); font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Demostración Visual en Video</div>
-                        <div style="color: #aaa; font-size: 0.75rem; margin-top: 4px;">Material audiovisual en producción — Disponible en demo en vivo</div>
-                    </div>
+                    <div style="position: relative; width: min(100%, 420px); aspect-ratio: 9 / 16; height: min(100%, 538px); max-height: 100%; margin: 0 auto;">
+                        <video controls preload="none" playsinline poster="videos/posters/poster-pos-movil.jpg" aria-label="Demostración del POS móvil: escaneo y venta desde un celular" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; background: #050505;" data-pos-demo>
+                            <source src="videos/demostraciones/Presentacion Juan POS.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
                 <div class="col-text">
