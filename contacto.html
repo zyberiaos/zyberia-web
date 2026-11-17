@@ -42,7 +42,7 @@
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="contacto.html" class="active" style="color: var(--color-yellow);">Contacto</a></li>
                 <li style="margin-left: 10px;">
-                    <a href="contacto.html" class="nav-cta" style="background: var(--color-yellow); color: #111; font-weight: 800; border: none; padding: 10px 20px; border-radius: 50px;">Hablemos</a>
+                    <a href="contacto.html?servicio=demo" class="nav-cta" style="background: var(--color-yellow); color: #111; font-weight: 800; border: none; padding: 10px 20px; border-radius: 50px;">Pedir demo</a>
                 </li>
             </ul>
 
@@ -231,6 +231,11 @@
                 value: 'comunicacion',
                 hint: 'Interés detectado: Presencia de Marca & SEO Local'
             },
+            'demo': {
+                value: 'zyberia-os',
+                hint: 'Interés detectado: Demo en vivo de Zyberia OS',
+                message: 'Quiero pedir una demo de Zyberia OS para mi negocio.'
+            },
             'zyberia-os': {
                 value: 'zyberia-os',
                 hint: 'Interés detectado: Implementación de Zyberia OS'
@@ -259,6 +264,9 @@
                 const mapping = serviceParamMap[normalized];
                 if (serviceSelect) {
                     serviceSelect.value = mapping.value;
+                }
+                if (mapping.message && messageInput && !messageInput.value) {
+                    messageInput.value = mapping.message;
                 }
                 if (hintDiv) {
                     hintDiv.textContent = 'ℹ️ ' + mapping.hint;
