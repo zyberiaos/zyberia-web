@@ -3234,3 +3234,15 @@ html, body {
     top: 0 !important;
     left: 0 !important;
 }
+
+/* ===== YouTube Shorts (facade: no carga YouTube hasta el clic) ===== */
+.yt-shorts-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; margin: 40px auto 0; }
+.yt-short-item { width: 260px; max-width: 100%; text-align: center; }
+.yt-short-item p { color: #aaa; font-size: 0.9rem; line-height: 1.45; margin: 12px 0 0; }
+.yt-short { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; cursor: pointer; border: 1px solid rgba(255,255,255,0.12); background: radial-gradient(circle at 30% 20%, #2a2410 0%, #111 55%, #000 100%); box-shadow: 0 18px 40px rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 22px; color: #fff; transition: transform .2s, border-color .2s; }
+.yt-short:hover, .yt-short:focus-visible { transform: translateY(-3px); border-color: rgba(255,215,0,0.6); outline: none; }
+.yt-short__play { width: 64px; height: 64px; border-radius: 50%; background: #ffd700; color: #111; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; padding-left: 5px; }
+.yt-short__title { font-weight: 700; font-size: 0.98rem; line-height: 1.3; text-align: center; }
+.yt-short__tag { position: absolute; top: 14px; left: 14px; font-size: 0.68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #ffd700; }
+.yt-short iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt-channel-link { display: inline-block; margin-top: 28px; color: #ffd700; font-weight: 700; text-decoration: underline; font-size: 0.95rem; }

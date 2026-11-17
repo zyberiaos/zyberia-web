@@ -601,3 +601,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// YouTube Shorts: el iframe (youtube-nocookie) se crea recién al hacer clic
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.yt-short[data-yt]').forEach(function (el) {
+    function load() {
+      if (el.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + el.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
+      f.title = el.getAttribute('aria-label') || 'Video de Zyberia';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      el.innerHTML = '';
+      el.appendChild(f);
+    }
+    el.addEventListener('click', load);
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); }
+    });
+  });
+});
