@@ -165,7 +165,7 @@
 
                         <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
                             <button id="btn-submit-form" type="submit" style="width: 100%; background: var(--color-yellow); color: #111; font-weight: 800; border: none; padding: 16px; border-radius: 50px; font-size: 1.05rem; cursor: pointer; transition: transform 0.2s, background 0.2s; font-family: inherit;">
-                                Enviar Consulta para Diagnóstico →
+                                Enviar consulta por WhatsApp →
                             </button>
                             
                             <a id="btn-submit-wa" href="https://wa.me/5493815464725" target="_blank" rel="noopener noreferrer" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.4); color: #25D366; font-weight: 700; padding: 14px; border-radius: 50px; font-size: 0.95rem; text-decoration: none; cursor: pointer; box-sizing: border-box; text-align: center; transition: background 0.2s;">
@@ -320,67 +320,25 @@
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                const submitBtn = document.getElementById('btn-submit-form');
-                const payload = {
-                    _subject: 'Nueva consulta desde zyberia.com.ar',
-                    _template: 'table',
-                    _captcha: 'false',
-                    Nombre: nameInput ? nameInput.value.trim() : '',
-                    Empresa: companyInput ? companyInput.value.trim() : '',
-                    Telefono: phoneInput ? phoneInput.value.trim() : '',
-                    Interes: serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '',
-                    Mensaje: messageInput ? messageInput.value.trim() : ''
-                };
-                const originalLabel = submitBtn ? submitBtn.textContent : '';
-                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
-
-                // Envío real por email (FormSubmit) a la casilla de Zyberia
-                fetch('https://formsubmit.co/ajax/zyberia.comunicacion.ia@gmail.com', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify(payload)
-                }).then(r => r.json()).then(data => {
-                    if (!(data && (data.success === true || data.success === 'true'))) throw new Error('send failed');
-                    afterSend();
-                }).catch(() => {
-                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
-                    alert('No pudimos enviar tu consulta en este momento. Escribinos directo por WhatsApp o intentá de nuevo en unos minutos.');
-                });
-                return;
-
-                function afterSend() {
-                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
-                // Mostrar banner de confirmación en la misma página
-                if (successBanner) {
-                    successBanner.style.display = 'block';
-                    successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-
-                // Ofrecer además abrir WhatsApp con los datos ya ordenados para una atención más rápida
-                const confirmedName = nameInput ? nameInput.value.trim() : '';
-                const confirmedCompany = companyInput ? companyInput.value.trim() : '';
-                const confirmedService = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '';
-                const confirmedNote = messageInput ? messageInput.value.trim() : '';
+                const name = nameInput ? nameInput.value.trim() : '';
+                const company = companyInput ? companyInput.value.trim() : '';
+                const phone = phoneInput ? phoneInput.value.trim() : '';
+                const service = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '';
+                const note = messageInput ? messageInput.value.trim() : '';
 
                 const waUrl = 'https://wa.me/5493815464725?text=' + encodeURIComponent(
-                    `Hola Zyberia! Acabo de enviar una consulta desde la web.\n` +
-                    `• Nombre: ${confirmedName}\n` +
-                    `• Empresa/Rubro: ${confirmedCompany}\n` +
-                    `• Área de interés: ${confirmedService}\n` +
-                    (confirmedNote ? `• Detalle: ${confirmedNote}` : '')
+                    'Hola Zyberia! Les escribo desde la web.' + '\n' +
+                    '• Nombre: ' + name + '\n' +
+                    '• Empresa/Rubro: ' + company + '\n' +
+                    '• Teléfono: ' + phone + '\n' +
+                    '• Área de interés: ' + service + '\n' +
+                    (note ? '• Detalle: ' + note : '')
                 );
 
-                // Resetear campos
+                // El formulario abre WhatsApp directamente con los datos cargados
+                if (!window.open(waUrl, '_blank')) { window.location.href = waUrl; }
                 form.reset();
                 updateWhatsAppLink();
-
-                // Notificación modal no invasiva
-                setTimeout(() => {
-                    if (confirm('¡Tu consulta fue registrada! ¿Deseás abrir WhatsApp para enviar una copia directa y acelerar la respuesta?')) {
-                        window.open(waUrl, '_blank');
-                    }
-                }, 300);
-                }
             });
         }
     });

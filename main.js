@@ -259,31 +259,15 @@
   if (form && !document.getElementById('contact-service')) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const label = btn ? btn.textContent : '';
-      const payload = {
-        _subject: 'Pedido de demo desde zyberia.com.ar (Zyberia OS)',
-        _template: 'table',
-        _captcha: 'false'
-      };
+      const lines = ['Hola Zyberia! Quiero pedir una demo de Zyberia OS.'];
       form.querySelectorAll('input, textarea').forEach((el) => {
-        const key = el.name || el.placeholder || el.type;
-        if (key) payload[key] = el.value.trim();
+        const v = el.value.trim();
+        const key = el.name || el.placeholder || '';
+        if (v && el.type !== 'hidden') lines.push('• ' + key + ': ' + v);
       });
-      if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
-      fetch('https://formsubmit.co/ajax/zyberia.comunicacion.ia@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then((r) => r.json()).then((data) => {
-        if (!(data && (data.success === true || data.success === 'true'))) throw new Error('send failed');
-        alert('¡Gracias por solicitar tu demo de Zyberia OS! Un especialista se comunicará con vos a la brevedad.');
-        form.reset();
-      }).catch(() => {
-        alert('No pudimos enviar tu solicitud en este momento. Escribinos por WhatsApp o intentá de nuevo en unos minutos.');
-      }).finally(() => {
-        if (btn) { btn.disabled = false; btn.textContent = label; }
-      });
+      const waUrl = 'https://wa.me/5493815464725?text=' + encodeURIComponent(lines.join('\n'));
+      if (!window.open(waUrl, '_blank')) { window.location.href = waUrl; }
+      form.reset();
     });
   }
 
