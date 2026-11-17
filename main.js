@@ -255,6 +255,36 @@
 
   // 7. Form Submission
   const form = document.getElementById('contact-form');
+  // Botón "Solicitar por email" del formulario de demo (zyberia-os.html)
+  const demoMailBtn = document.getElementById('demo-mail-btn');
+  if (demoMailBtn && form) {
+    demoMailBtn.addEventListener('click', () => {
+      if (!form.reportValidity()) return;
+      const payload = { _subject: 'Pedido de demo desde zyberia.com.ar (Zyberia OS)', _template: 'table', _captcha: 'false' };
+      form.querySelectorAll('input, textarea').forEach((el) => {
+        const key = el.name || el.placeholder || el.type;
+        if (key) payload[key] = el.value.trim();
+      });
+      const label = demoMailBtn.textContent;
+      demoMailBtn.disabled = true;
+      demoMailBtn.textContent = 'Enviando...';
+      fetch('https://formsubmit.co/ajax/zyberia.comunicacion.ia@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then((r) => r.json()).then((data) => {
+        if (!(data && (data.success === true || data.success === 'true'))) throw new Error('send failed');
+        alert('¡Gracias por solicitar tu demo de Zyberia OS! Un especialista se comunicará con vos a la brevedad.');
+        form.reset();
+      }).catch(() => {
+        alert('No pudimos enviar tu solicitud por email en este momento. Probá por WhatsApp o intentá de nuevo en unos minutos.');
+      }).finally(() => {
+        demoMailBtn.disabled = false;
+        demoMailBtn.textContent = label;
+      });
+    });
+  }
+
   // contacto.html tiene su propio manejador (selector #contact-service); acá solo el formulario "Solicitar Demo"
   if (form && !document.getElementById('contact-service')) {
     form.addEventListener('submit', (e) => {

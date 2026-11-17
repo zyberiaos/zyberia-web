@@ -167,6 +167,10 @@
                             <button id="btn-submit-form" type="submit" style="width: 100%; background: var(--color-yellow); color: #111; font-weight: 800; border: none; padding: 16px; border-radius: 50px; font-size: 1.05rem; cursor: pointer; transition: transform 0.2s, background 0.2s; font-family: inherit;">
                                 Enviar consulta por WhatsApp →
                             </button>
+
+                            <button id="btn-submit-mail" type="button" style="width: 100%; background: transparent; color: #fff; font-weight: 700; border: 1px solid rgba(255,255,255,0.3); padding: 14px; border-radius: 50px; font-size: 0.98rem; cursor: pointer; font-family: inherit;">
+                                ✉️ Enviar por email
+                            </button>
                             
                             <a id="btn-submit-wa" href="https://wa.me/5493815464725" target="_blank" rel="noopener noreferrer" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.4); color: #25D366; font-weight: 700; padding: 14px; border-radius: 50px; font-size: 0.95rem; text-decoration: none; cursor: pointer; box-sizing: border-box; text-align: center; transition: background 0.2s;">
                                 💬 O enviar directo por WhatsApp
@@ -317,6 +321,45 @@
 
         // Manejar el submit del formulario con feedback en página
         if (form) {
+            // Envío por email (FormSubmit) a la casilla de Zyberia
+            const mailBtn = document.getElementById('btn-submit-mail');
+            if (mailBtn) {
+                mailBtn.addEventListener('click', () => {
+                    if (!form.reportValidity()) return;
+                    const payload = {
+                        _subject: 'Nueva consulta desde zyberia.com.ar',
+                        _template: 'table',
+                        _captcha: 'false',
+                        Nombre: nameInput ? nameInput.value.trim() : '',
+                        Empresa: companyInput ? companyInput.value.trim() : '',
+                        Telefono: phoneInput ? phoneInput.value.trim() : '',
+                        Interes: serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '',
+                        Mensaje: messageInput ? messageInput.value.trim() : ''
+                    };
+                    const label = mailBtn.textContent;
+                    mailBtn.disabled = true;
+                    mailBtn.textContent = 'Enviando...';
+                    fetch('https://formsubmit.co/ajax/zyberia.comunicacion.ia@gmail.com', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }).then(r => r.json()).then(data => {
+                        if (!(data && (data.success === true || data.success === 'true'))) throw new Error('send failed');
+                        if (successBanner) {
+                            successBanner.style.display = 'block';
+                            successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                        form.reset();
+                        updateWhatsAppLink();
+                    }).catch(() => {
+                        alert('No pudimos enviar tu consulta por email en este momento. Probá por WhatsApp o intentá de nuevo en unos minutos.');
+                    }).finally(() => {
+                        mailBtn.disabled = false;
+                        mailBtn.textContent = label;
+                    });
+                });
+            }
+
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
 
