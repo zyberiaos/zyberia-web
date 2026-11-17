@@ -25,6 +25,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+<!-- GOOGLE SEARCH CONSOLE: descomentar y reemplazar TU_CODIGO por el valor que da Google (Verificación > Etiqueta HTML)
+<meta name="google-site-verification" content="TU_CODIGO">
+-->
 </head>
 <body style="background-color: #080808; color: #ffffff;">
 
@@ -87,7 +90,7 @@
                             <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.05); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--color-yellow); flex-shrink: 0;">💬</div>
                             <div>
                                 <strong style="color: #fff; display: block; font-size: 0.95rem;">WhatsApp Directo</strong>
-                                <a href="https://wa.me/5493816223403" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); text-decoration: none; font-weight: 600; font-size: 0.9rem;">+54 9 381 622-3403</a>
+                                <a href="https://wa.me/5493815464725" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow); text-decoration: none; font-weight: 600; font-size: 0.9rem;">+54 9 381 546-4725</a>
                             </div>
                         </div>
                         <div style="display: flex; gap: 16px; align-items: flex-start;">
@@ -165,7 +168,7 @@
                                 Enviar Consulta para Diagnóstico →
                             </button>
                             
-                            <a id="btn-submit-wa" href="https://wa.me/5493816223403" target="_blank" rel="noopener noreferrer" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.4); color: #25D366; font-weight: 700; padding: 14px; border-radius: 50px; font-size: 0.95rem; text-decoration: none; cursor: pointer; box-sizing: border-box; text-align: center; transition: background 0.2s;">
+                            <a id="btn-submit-wa" href="https://wa.me/5493815464725" target="_blank" rel="noopener noreferrer" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.4); color: #25D366; font-weight: 700; padding: 14px; border-radius: 50px; font-size: 0.95rem; text-decoration: none; cursor: pointer; box-sizing: border-box; text-align: center; transition: background 0.2s;">
                                 💬 O enviar directo por WhatsApp
                             </a>
                         </div>
@@ -300,7 +303,7 @@
                 text += 'Quisiera solicitar un diagnóstico sobre servicios de comunicación o el sistema Zyberia OS.';
             }
 
-            waDirectBtn.href = 'https://wa.me/5493816223403?text=' + encodeURIComponent(text);
+            waDirectBtn.href = 'https://wa.me/5493815464725?text=' + encodeURIComponent(text);
         }
 
         // Escuchar cambios en los inputs para actualizar el enlace de WhatsApp
@@ -316,20 +319,50 @@
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
+                const submitBtn = document.getElementById('btn-submit-form');
+                const payload = {
+                    _subject: 'Nueva consulta desde zyberia.com.ar',
+                    _template: 'table',
+                    _captcha: 'false',
+                    Nombre: nameInput ? nameInput.value.trim() : '',
+                    Empresa: companyInput ? companyInput.value.trim() : '',
+                    Telefono: phoneInput ? phoneInput.value.trim() : '',
+                    Interes: serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '',
+                    Mensaje: messageInput ? messageInput.value.trim() : ''
+                };
+                const originalLabel = submitBtn ? submitBtn.textContent : '';
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
+
+                // Envío real por email (FormSubmit) a la casilla de Zyberia
+                fetch('https://formsubmit.co/ajax/zyberia.comunicacion.ia@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).then(r => r.json()).then(data => {
+                    if (!(data && (data.success === true || data.success === 'true'))) throw new Error('send failed');
+                    afterSend();
+                }).catch(() => {
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+                    alert('No pudimos enviar tu consulta en este momento. Escribinos directo por WhatsApp o intentá de nuevo en unos minutos.');
+                });
+                return;
+
+                function afterSend() {
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
                 // Mostrar banner de confirmación en la misma página
                 if (successBanner) {
                     successBanner.style.display = 'block';
                     successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
-                
+
                 // Ofrecer además abrir WhatsApp con los datos ya ordenados para una atención más rápida
                 const confirmedName = nameInput ? nameInput.value.trim() : '';
                 const confirmedCompany = companyInput ? companyInput.value.trim() : '';
                 const confirmedService = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '';
                 const confirmedNote = messageInput ? messageInput.value.trim() : '';
 
-                const waUrl = 'https://wa.me/5493816223403?text=' + encodeURIComponent(
+                const waUrl = 'https://wa.me/5493815464725?text=' + encodeURIComponent(
                     `Hola Zyberia! Acabo de enviar una consulta desde la web.\n` +
                     `• Nombre: ${confirmedName}\n` +
                     `• Empresa/Rubro: ${confirmedCompany}\n` +
@@ -347,6 +380,7 @@
                         window.open(waUrl, '_blank');
                     }
                 }, 300);
+                }
             });
         }
     });

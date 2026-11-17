@@ -255,11 +255,35 @@
 
   // 7. Form Submission
   const form = document.getElementById('contact-form');
-  if (form) {
+  // contacto.html tiene su propio manejador (selector #contact-service); acá solo el formulario "Solicitar Demo"
+  if (form && !document.getElementById('contact-service')) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('¡Gracias por solicitar tu diagnóstico comercial con Zyberia! Un especialista en tecnología comercial se comunicará en menos de 24hs.');
-      form.reset();
+      const btn = form.querySelector('button[type="submit"]');
+      const label = btn ? btn.textContent : '';
+      const payload = {
+        _subject: 'Pedido de demo desde zyberia.com.ar (Zyberia OS)',
+        _template: 'table',
+        _captcha: 'false'
+      };
+      form.querySelectorAll('input, textarea').forEach((el) => {
+        const key = el.name || el.placeholder || el.type;
+        if (key) payload[key] = el.value.trim();
+      });
+      if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
+      fetch('https://formsubmit.co/ajax/zyberia.comunicacion.ia@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then((r) => r.json()).then((data) => {
+        if (!(data && (data.success === true || data.success === 'true'))) throw new Error('send failed');
+        alert('¡Gracias por solicitar tu demo de Zyberia OS! Un especialista se comunicará con vos a la brevedad.');
+        form.reset();
+      }).catch(() => {
+        alert('No pudimos enviar tu solicitud en este momento. Escribinos por WhatsApp o intentá de nuevo en unos minutos.');
+      }).finally(() => {
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+      });
     });
   }
 
@@ -509,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (showWaBtn) {
             const btnText = waCustomText || '📲 Solicitar Asesoramiento por WhatsApp ➔';
             const waBtn = document.createElement('a');
-            waBtn.href = 'https://wa.me/5491112345678?text=Hola%20Zyberia!%20Quiero%20asesoramiento%20sobre%20los%20servicios%20de%20comunicacion%20y%20el%20sistema%20Zyberia%20OS';
+            waBtn.href = 'https://wa.me/5493815464725?text=Hola%20Zyberia!%20Quiero%20asesoramiento%20sobre%20los%20servicios%20de%20comunicacion%20y%20el%20sistema%20Zyberia%20OS';
             waBtn.target = '_blank';
             waBtn.style.display = 'inline-flex';
             waBtn.style.alignItems = 'center';
@@ -534,7 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const q = query.toLowerCase();
 
         if (q.includes('whatsapp_real')) {
-            window.open('https://wa.me/5491112345678?text=Hola%20Zyberia!%20Quiero%20consultar%20por%20servicios%20de%20comunicacion%20o%20el%20sistema%20Zyberia%20OS', '_blank');
+            window.open('https://wa.me/5493815464725?text=Hola%20Zyberia!%20Quiero%20consultar%20por%20servicios%20de%20comunicacion%20o%20el%20sistema%20Zyberia%20OS', '_blank');
             appendMessage('bot', '¡Perfecto! Te abrí una ventana de WhatsApp directo para hablar con un especialista de Zyberia.', false);
             return;
         }
