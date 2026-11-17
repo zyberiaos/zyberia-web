@@ -3258,3 +3258,21 @@ html, body {
 .yt-short[data-yt="Mv7deEso-Pw"] { background-image: url("videos/posters/yt-Mv7deEso-Pw.jpg"); }
 .yt-short[data-yt="a5oKq5ctlJs"] { background-image: url("videos/posters/yt-a5oKq5ctlJs.jpg"); }
 .yt-short[data-yt="MV5dgPHNkx8"] { background-image: url("videos/posters/yt-MV5dgPHNkx8.jpg"); }
+
+/* Ficha inteligente (mockup de Zyberia OS): se adapta a cualquier ancho */
+.ficha-inteligente-mockup { width: 100%; box-sizing: border-box; }
+.ficha-inteligente-mockup div[style*="min-width: 300px"] { min-width: min(300px, 100%) !important; }
+.ficha-inteligente-mockup h3 { overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+  .ficha-inteligente-mockup div[style*="display: flex"] { flex-wrap: wrap; }
+  .ficha-inteligente-mockup div[style*="padding: 30px"],
+  .ficha-inteligente-mockup div[style*="padding: 20px 30px"] { padding: 18px !important; gap: 22px !important; }
+  .ficha-inteligente-mockup div[style*="min-width: 300px"] { flex: 1 1 100% !important; min-width: 0 !important; }
+  .ficha-inteligente-mockup div[style*="height: 350px"] { height: 220px !important; }
+  .ficha-inteligente-mockup h3 { font-size: 1.4rem !important; }
+  .ficha-inteligente-mockup div[style*="font-size: 3.5rem"] { font-size: clamp(2rem, 10vw, 3rem) !important; overflow-wrap: anywhere; }
+  .ficha-inteligente-mockup div[style*="margin: 0 30px 20px"] { margin: 0 18px 18px !important; padding: 14px !important; }
+  .ficha-inteligente-mockup div[style*="gap: 15px"] { gap: 12px !important; }
+  .ficha-inteligente-mockup .ia-dropdown { position: static !important; width: auto !important; margin: 0 18px 18px; }
+  .ficha-inteligente-mockup button { white-space: normal !important; }
+}
